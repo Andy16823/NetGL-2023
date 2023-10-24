@@ -1,17 +1,14 @@
-﻿  pch.cpp
-  AssemblyInfo.cpp
-  NetGL.cpp
+﻿  NetGL.cpp
 E:\NetGL - Kopie\NetGL\glcorearb.h(63,10): warning C4067: Unerwartete Token nach Präprozessordirektive - Zeilenvorschub erwartet.
 E:\NetGL - Kopie\NetGL\NetGL.cpp(642,35): warning C4267: "return": Konvertierung von "size_t" nach "int", Datenverlust möglich
-E:\NetGL - Kopie\NetGL\NetGL.cpp(955,27): warning C4244: "Argument": Konvertierung von "float" in "GLsizei", möglicher Datenverlust
-E:\NetGL - Kopie\NetGL\NetGL.cpp(955,20): warning C4244: "Argument": Konvertierung von "float" in "GLsizei", möglicher Datenverlust
-E:\NetGL - Kopie\NetGL\NetGL.cpp(955,17): warning C4244: "Argument": Konvertierung von "float" in "GLint", möglicher Datenverlust
-E:\NetGL - Kopie\NetGL\NetGL.cpp(955,14): warning C4244: "Argument": Konvertierung von "float" in "GLint", möglicher Datenverlust
+E:\NetGL - Kopie\NetGL\NetGL.cpp(960,27): warning C4244: "Argument": Konvertierung von "float" in "GLsizei", möglicher Datenverlust
+E:\NetGL - Kopie\NetGL\NetGL.cpp(960,20): warning C4244: "Argument": Konvertierung von "float" in "GLsizei", möglicher Datenverlust
+E:\NetGL - Kopie\NetGL\NetGL.cpp(960,17): warning C4244: "Argument": Konvertierung von "float" in "GLint", möglicher Datenverlust
+E:\NetGL - Kopie\NetGL\NetGL.cpp(960,14): warning C4244: "Argument": Konvertierung von "float" in "GLint", möglicher Datenverlust
   TextureImporter.cpp
 E:\NetGL - Kopie\NetGL\glcorearb.h(63,10): warning C4067: Unerwartete Token nach Präprozessordirektive - Zeilenvorschub erwartet.
 E:\NetGL - Kopie\NetGL\TextureImporter.cpp(20,43): warning C4305: "Argument": Verkürzung von "double" in "float"
 E:\NetGL - Kopie\NetGL\TextureImporter.cpp(38,43): warning C4305: "Argument": Verkürzung von "double" in "float"
   Code wird generiert...
-  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
   AssemblyInfo.obj : MSIL-Modulgefunden; inkrementelles Verknüpfen wird für MSIL deaktiviert; vollständiger Link wird durchgeführt
   NetGL.vcxproj -> E:\NetGL - Kopie\x64\Debug\NetGL.dll

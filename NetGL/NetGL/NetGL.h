@@ -402,6 +402,7 @@ namespace NetGL {
 
 		// Matrix & View
 		void LookAt(float eyeX, float eyeY, float eyeZ, float centerX, float centerY, float centerZ, float upX, float upY, float upZ);
+		void Perspective(float fov, float apsect, float znear, float zfar);
 		void Frustum(float left, float right, float bottom, float top, float znear, float zfar);
 		void Ortho(float left, float right, float bottom, float top, float znear, float zfar);
 		void Viewport(float x, float y, float width, float height);

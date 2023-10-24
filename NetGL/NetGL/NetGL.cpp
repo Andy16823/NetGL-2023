@@ -945,6 +945,11 @@ namespace NetGL {
 		glFrustum(left, right, bottom, top, znear, zfar);
 	}
 
+	void NetGL::OpenGL::Perspective(float fov, float aspect, float znear, float zfar) 
+	{
+		gluPerspective(fov, aspect, znear, zfar);
+	}
+
 	void NetGL::OpenGL::Ortho(float left, float right, float bottom, float top, float znear, float zfar)
 	{
 		glOrtho(left, right, bottom, top, znear, zfar);
