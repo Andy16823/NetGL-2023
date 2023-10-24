@@ -17,9 +17,9 @@ Please note that NetGL is currently in beta. While it's functional, there may be
 
 ## Getting Started
 
-1.) Download the latest release version of the NetGL dll
-2.) Add the dll to your project as a reference
-3.) Initialize NetGL as you can see in this example https://github.com/Andy16823/NetGL-2023/blob/main/Examples/01%20-%20ModernGL%20Triangle/WindowsFormsApp1/Form1.cs
+1. Download the latest release version of the NetGL dll
+2. Add the dll to your project as a reference
+3. Initialize NetGL as you can see in this example https://github.com/Andy16823/NetGL-2023/blob/main/Examples/01%20-%20ModernGL%20Triangle/WindowsFormsApp1/Form1.cs
 
 ## License
 
