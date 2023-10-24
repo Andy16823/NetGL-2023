@@ -7,6 +7,7 @@
 #include <vector>
 #include <string>
 #include "glcorearb.h"
+#include <msclr\marshal_cppstd.h>
 
 
 using namespace System;
@@ -244,6 +245,9 @@ namespace NetGL {
 		static int SrcAlpha = GL_SRC_ALPHA;
 		static int OneMinusSrcAlpha = GL_ONE_MINUS_SRC_ALPHA;
 
+		static int VertexShader = GL_VERTEX_SHADER;
+		static int FragmentShader = GL_FRAGMENT_SHADER;
+
 		// GL Wrapper
 		PFNGLBINDBUFFERPROC glBindBuffer;
 		PFNGLGENBUFFERSPROC glGenBuffers;
@@ -255,6 +259,13 @@ namespace NetGL {
 		PFNGLVERTEXATTRIBPOINTERPROC glVertexAttribPointer;
 		PFNGLDISABLEVERTEXATTRIBARRAYPROC glDisableVertexAttribArray;
 		PFNGLDELETEVERTEXARRAYSPROC glDeleteVertexArrays;
+		PFNGLCREATESHADERPROC glCreateShader;
+		PFNGLSHADERSOURCEPROC glShaderSource;
+		PFNGLCOMPILESHADERPROC glCompileShader;
+		PFNGLCREATEPROGRAMPROC glCreateProgram;
+		PFNGLATTACHSHADERPROC glAttachShader;
+		PFNGLLINKPROGRAMPROC glLinkProgram;
+		PFNGLUSEPROGRAMPROC glUseProgram;
 
 		// Konstruktor
 		NetGL::OpenGL::OpenGL(void);
@@ -413,11 +424,21 @@ namespace NetGL {
 		int GenVertexArrays(int n);
 		void BindVertexArray(int BufferID);
 		void EnableVertexAttribArray(int BufferID);
+		void VertexAttribPointer(int index, int size, int type, bool normalized, int stride, int pointer);
 		void VertexAttribPointer(int Index, int Size, int Type, int Normalized, int Stride, array<float>^ data);
 		void VertexAttribPointer(int Index, int Size, int Type, int Normalized, int Stride, array<short>^ data);
 		void VertexAttribPointer(int Index, int Size, int Type, int Normalized, int Stride, array<int>^ data);
 		void VertexAttribPointer(int Index, int Size, int Type, int Normalized, int Stride, array<double>^ data);
 		void DeleteVertexArrays(int n, int BufferID);
+
+		//Shaders
+		int CreateShader(int type);
+		void SetShaderSource(int shader, int count, String^ source);
+		void CompileShader(int shader);
+		int CreateProgram();
+		void AttachShader(int shaderProgram, int shader);
+		void LinkProgram(int shaderProgram);
+		void UseProgram(int shaderProgram);
 
 		// Basics
 		void LineWidth(float value);

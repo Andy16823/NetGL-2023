@@ -24,6 +24,13 @@ Class NetGL.OpenGL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     IntPtr glVertexAttribPointer : Public
     IntPtr glDisableVertexAttribArray : Public
     IntPtr glDeleteVertexArrays : Public
+    IntPtr glCreateShader : Public
+    IntPtr glShaderSource : Public
+    IntPtr glCompileShader : Public
+    IntPtr glCreateProgram : Public
+    IntPtr glAttachShader : Public
+    IntPtr glLinkProgram : Public
+    IntPtr glUseProgram : Public
     Boolean modernGL : Public
     Int32 DepthBufferBit : Public, Static
     Int32 ColorBufferBit : Public, Static
@@ -244,6 +251,8 @@ Class NetGL.OpenGL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Int32 DynamicCopy : Public, Static
     Int32 SrcAlpha : Public, Static
     Int32 OneMinusSrcAlpha : Public, Static
+    Int32 VertexShader : Public, Static
+    Int32 FragmentShader : Public, Static
   Methods:
     BindVertexArray(Int32): PrivateScope, Public, HideBySig
     EnableVertexAttribArray(Int32): PrivateScope, Public, HideBySig
@@ -251,7 +260,15 @@ Class NetGL.OpenGL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     VertexAttribPointer(Int32, Int32, Int32, Int32, Int32, Int32[]): PrivateScope, Public, HideBySig
     VertexAttribPointer(Int32, Int32, Int32, Int32, Int32, Int16[]): PrivateScope, Public, HideBySig
     VertexAttribPointer(Int32, Int32, Int32, Int32, Int32, Single[]): PrivateScope, Public, HideBySig
+    VertexAttribPointer(Int32, Int32, Int32, Boolean(HasFieldMarshal), Int32, Int32): PrivateScope, Public, HideBySig
     DeleteVertexArrays(Int32, Int32): PrivateScope, Public, HideBySig
+    CreateShader(Int32): PrivateScope, Public, HideBySig
+    SetShaderSource(Int32, Int32, String): PrivateScope, Public, HideBySig
+    CompileShader(Int32): PrivateScope, Public, HideBySig
+    CreateProgram(): PrivateScope, Public, HideBySig
+    AttachShader(Int32, Int32): PrivateScope, Public, HideBySig
+    LinkProgram(Int32): PrivateScope, Public, HideBySig
+    UseProgram(Int32): PrivateScope, Public, HideBySig
     LineWidth(Single): PrivateScope, Public, HideBySig
     Initial(IntPtr): PrivateScope, Public, HideBySig
     Clear(Int32): PrivateScope, Public, HideBySig

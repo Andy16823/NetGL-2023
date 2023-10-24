@@ -868,6 +868,69 @@ namespace NetGL {
 			Console::WriteLine(false);
 		}
 
+		glCreateShader = (PFNGLCREATESHADERPROC)wglGetProcAddress("glCreateShader");
+		if (glCreateShader != NULL)
+		{
+			Console::WriteLine("glCreateShader loaded");
+		}
+		else 
+		{
+			Console::WriteLine("Error while loading glCreateShader");
+		}
+
+		glShaderSource = (PFNGLSHADERSOURCEPROC)wglGetProcAddress("glShaderSource");
+		if (glShaderSource != NULL) 
+		{
+			Console::WriteLine("glShaderSource loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glShaderSource");
+		}
+
+		glCompileShader = (PFNGLCOMPILESHADERPROC)wglGetProcAddress("glCompileShader");
+		if (glCompileShader != NULL)
+		{
+			Console::WriteLine("glCompileShader loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glCompileShader");
+		}
+
+		glCreateProgram = (PFNGLCREATEPROGRAMPROC)wglGetProcAddress("glCreateProgram");
+		if (glCreateProgram != NULL)
+		{
+			Console::WriteLine("glCreateProgram loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glCreateProgram");
+		}
+
+		glAttachShader = (PFNGLATTACHSHADERPROC)wglGetProcAddress("glAttachShader");
+		if (glAttachShader != NULL)
+		{
+			Console::WriteLine("glAttachShader loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glAttachShader");
+		}
+
+		glLinkProgram = (PFNGLLINKPROGRAMPROC)wglGetProcAddress("glLinkProgram");
+		if (glLinkProgram != NULL)
+		{
+			Console::WriteLine("glLinkProgram loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glLinkProgram");
+		}
+
+		glUseProgram = (PFNGLUSEPROGRAMPROC)wglGetProcAddress("glUseProgram");
+		if (glUseProgram != NULL)
+		{
+			Console::WriteLine("glUseProgram loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glUseProgram");
+		}
 	}
 
 
@@ -886,6 +949,11 @@ namespace NetGL {
 	void NetGL::OpenGL::EnableVertexAttribArray(int BufferID)
 	{
 		glEnableVertexAttribArray(BufferID);
+	}
+
+	void NetGL::OpenGL::VertexAttribPointer(int index, int size, int type, bool normalized, int stride, int pointer)
+	{
+		glVertexAttribPointer(index, size, type, normalized, stride, (void*)pointer);
 	}
 
 	void NetGL::OpenGL::VertexAttribPointer(int Index, int Size, int Type, int Normalized, int Stride, array<float>^ data)
@@ -977,4 +1045,43 @@ namespace NetGL {
 		glLineWidth(width);
 	}
 
+	int NetGL::OpenGL::CreateShader(int type) {
+		GLuint id;
+		id = glCreateShader(type);
+		return (int) id;
+	}
+
+	void NetGL::OpenGL::SetShaderSource(int shader, int count, String^ source) 
+	{
+		const char* sourceCode = (const char*)(System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi(source)).ToPointer();
+		glShaderSource(shader, count, &sourceCode, nullptr);
+		System::Runtime::InteropServices::Marshal::FreeHGlobal(IntPtr((void*)sourceCode));
+	}
+
+	void NetGL::OpenGL::CompileShader(int shader)
+	{
+		glCompileShader(shader);
+	}
+
+	int NetGL::OpenGL::CreateProgram() 
+	{
+		GLuint id;
+		id = glCreateProgram();
+		return (int)id;
+	}
+
+	void NetGL::OpenGL::AttachShader(int shaderProgram, int shader)
+	{
+		glAttachShader(shaderProgram, shader);
+	}
+
+	void NetGL::OpenGL::LinkProgram(int shaderProgram)
+	{
+		glLinkProgram(shaderProgram);
+	}
+
+	void NetGL::OpenGL::UseProgram(int shaderProgram)
+	{
+		glUseProgram(shaderProgram);
+	}
 }
