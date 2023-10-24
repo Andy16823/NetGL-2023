@@ -949,6 +949,25 @@ namespace NetGL {
 		else {
 			Console::WriteLine("Error while loading glDeleteProgram");
 		}
+
+		glUniform1i = (PFNGLUNIFORM1IPROC)wglGetProcAddress("glUniform1i");
+		if (glUniform1i != NULL)
+		{
+			Console::WriteLine("glUniform1i loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glUniform1i");
+		}
+
+		glGetUniformLocation = (PFNGLGETUNIFORMLOCATIONPROC)wglGetProcAddress("glGetUniformLocation");
+		if (glGetUniformLocation != NULL)
+		{
+			Console::WriteLine("glGetUniformLocation loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glGetUniformLocation");
+		}
+		Console::WriteLine("ModernGL Loaded!");
 	}
 
 
@@ -1111,5 +1130,19 @@ namespace NetGL {
 	void NetGL::OpenGL::DeleteProgram(int program)
 	{
 		glDeleteProgram(program);
+	}
+
+	void NetGL::OpenGL::Uniform1I(int location, int v0)
+	{
+		glUniform1i(location, v0);
+	}
+
+	int NetGL::OpenGL::GetUniformLocation(int program, String^ name)
+	{
+		const char* cname = (const char*)(System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi(name)).ToPointer();
+		GLuint location;
+		location = glGetUniformLocation(program, cname);
+		System::Runtime::InteropServices::Marshal::FreeHGlobal(IntPtr((void*)cname));
+		return location;
 	}
 }

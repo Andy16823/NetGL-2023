@@ -268,6 +268,8 @@ namespace NetGL {
 		PFNGLUSEPROGRAMPROC glUseProgram;
 		PFNGLDELETESHADERPROC glDeleteShader;
 		PFNGLDELETEPROGRAMPROC glDeleteProgram;
+		PFNGLUNIFORM1IPROC glUniform1i;
+		PFNGLGETUNIFORMLOCATIONPROC glGetUniformLocation;
 
 		// Konstruktor
 		NetGL::OpenGL::OpenGL(void);
@@ -443,6 +445,8 @@ namespace NetGL {
 		void UseProgram(int shaderProgram);
 		void DeleteShader(int shader);
 		void DeleteProgram(int program);
+		void Uniform1I(int location, int v0);
+		int GetUniformLocation(int program, String^ name);
 
 		// Basics
 		void LineWidth(float value);

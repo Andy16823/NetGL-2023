@@ -33,6 +33,8 @@ Class NetGL.OpenGL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     IntPtr glUseProgram : Public
     IntPtr glDeleteShader : Public
     IntPtr glDeleteProgram : Public
+    IntPtr glUniform1i : Public
+    IntPtr glGetUniformLocation : Public
     Boolean modernGL : Public
     Int32 DepthBufferBit : Public, Static
     Int32 ColorBufferBit : Public, Static
@@ -273,6 +275,8 @@ Class NetGL.OpenGL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     UseProgram(Int32): PrivateScope, Public, HideBySig
     DeleteShader(Int32): PrivateScope, Public, HideBySig
     DeleteProgram(Int32): PrivateScope, Public, HideBySig
+    Uniform1I(Int32, Int32): PrivateScope, Public, HideBySig
+    GetUniformLocation(Int32, String): PrivateScope, Public, HideBySig
     LineWidth(Single): PrivateScope, Public, HideBySig
     Initial(IntPtr): PrivateScope, Public, HideBySig
     Clear(Int32): PrivateScope, Public, HideBySig
