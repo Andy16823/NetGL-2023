@@ -95,7 +95,7 @@ namespace WindowsFormsApp1
             gl.TexParameteri(NetGL.OpenGL.Texture2D, NetGL.OpenGL.TextureWrapS, NetGL.OpenGL.Repeate);
             gl.TexParameteri(NetGL.OpenGL.Texture2D, NetGL.OpenGL.TextureWrapT, NetGL.OpenGL.Repeate);
             gl.TexImage2D(NetGL.OpenGL.Texture2D, 0, NetGL.OpenGL.RGBA, bitmap.Width, bitmap.Height, 0, NetGL.OpenGL.BGRAExt, NetGL.OpenGL.UnsignedByte, bitmap);
-            gl.Uniform1I(gl.GetUniformLocation(program, "inTexCoord"), 0);
+            gl.Uniform1I(gl.GetUniformLocation(program, "textureSampler"), 0);
 
             //Generte the vbo
             float[] verticies =
