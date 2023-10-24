@@ -35,6 +35,7 @@ Class NetGL.OpenGL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     IntPtr glDeleteProgram : Public
     IntPtr glUniform1i : Public
     IntPtr glGetUniformLocation : Public
+    IntPtr glActiveTexture : Public
     Boolean modernGL : Public
     Int32 DepthBufferBit : Public, Static
     Int32 ColorBufferBit : Public, Static
@@ -257,6 +258,38 @@ Class NetGL.OpenGL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Int32 OneMinusSrcAlpha : Public, Static
     Int32 VertexShader : Public, Static
     Int32 FragmentShader : Public, Static
+    Int32 Texture0 : Public, Static
+    Int32 Texture1 : Public, Static
+    Int32 Texture2 : Public, Static
+    Int32 Texture3 : Public, Static
+    Int32 Texture4 : Public, Static
+    Int32 Texture5 : Public, Static
+    Int32 Texture6 : Public, Static
+    Int32 Texture7 : Public, Static
+    Int32 Texture8 : Public, Static
+    Int32 Texture9 : Public, Static
+    Int32 Texture10 : Public, Static
+    Int32 Texture11 : Public, Static
+    Int32 Texture12 : Public, Static
+    Int32 Texture13 : Public, Static
+    Int32 Texture14 : Public, Static
+    Int32 Texture15 : Public, Static
+    Int32 Texture16 : Public, Static
+    Int32 Texture17 : Public, Static
+    Int32 Texture18 : Public, Static
+    Int32 Texture19 : Public, Static
+    Int32 Texture20 : Public, Static
+    Int32 Texture21 : Public, Static
+    Int32 Texture22 : Public, Static
+    Int32 Texture23 : Public, Static
+    Int32 Texture24 : Public, Static
+    Int32 Texture25 : Public, Static
+    Int32 Texture26 : Public, Static
+    Int32 Texture27 : Public, Static
+    Int32 Texture28 : Public, Static
+    Int32 Texture29 : Public, Static
+    Int32 Texture30 : Public, Static
+    Int32 Texture31 : Public, Static
   Methods:
     BindVertexArray(Int32): PrivateScope, Public, HideBySig
     EnableVertexAttribArray(Int32): PrivateScope, Public, HideBySig
@@ -277,6 +310,7 @@ Class NetGL.OpenGL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     DeleteProgram(Int32): PrivateScope, Public, HideBySig
     Uniform1I(Int32, Int32): PrivateScope, Public, HideBySig
     GetUniformLocation(Int32, String): PrivateScope, Public, HideBySig
+    ActiveTexture(Int32): PrivateScope, Public, HideBySig
     LineWidth(Single): PrivateScope, Public, HideBySig
     Initial(IntPtr): PrivateScope, Public, HideBySig
     Clear(Int32): PrivateScope, Public, HideBySig

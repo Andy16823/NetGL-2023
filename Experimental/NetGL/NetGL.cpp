@@ -967,6 +967,16 @@ namespace NetGL {
 		else {
 			Console::WriteLine("Error while loading glGetUniformLocation");
 		}
+
+		glActiveTexture = (PFNGLACTIVETEXTUREPROC)wglGetProcAddress("glActiveTexture");
+		if (glActiveTexture != NULL)
+		{
+			Console::WriteLine("glActiveTexture loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glActiveTexture");
+		}
+
 		Console::WriteLine("ModernGL Loaded!");
 	}
 
@@ -1144,5 +1154,10 @@ namespace NetGL {
 		location = glGetUniformLocation(program, cname);
 		System::Runtime::InteropServices::Marshal::FreeHGlobal(IntPtr((void*)cname));
 		return location;
+	}
+
+	void NetGL::OpenGL::ActiveTexture(int texture)
+	{
+		glActiveTexture(texture);
 	}
 }
