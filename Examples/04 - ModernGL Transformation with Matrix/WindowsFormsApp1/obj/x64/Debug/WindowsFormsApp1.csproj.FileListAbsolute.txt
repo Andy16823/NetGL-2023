@@ -1,0 +1,97 @@
+C:\Users\Win10 Pro x64\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\x64\Debug\WindowsFormsApp1.exe.config
+C:\Users\Win10 Pro x64\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\x64\Debug\WindowsFormsApp1.exe
+C:\Users\Win10 Pro x64\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\x64\Debug\WindowsFormsApp1.pdb
+C:\Users\Win10 Pro x64\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\x64\Debug\NetGL.dll
+C:\Users\Win10 Pro x64\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\x64\Debug\NetGL.pdb
+C:\Users\Win10 Pro x64\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+C:\Users\Win10 Pro x64\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csproj.SuggestedBindingRedirects.cache
+C:\Users\Win10 Pro x64\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\Win10 Pro x64\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\Win10 Pro x64\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\Win10 Pro x64\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\Win10 Pro x64\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csproj.CopyComplete
+C:\Users\Win10 Pro x64\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.exe
+C:\Users\Win10 Pro x64\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.pdb
+F:\WindowsFormsApp1\WindowsFormsApp1\bin\x64\Debug\WindowsFormsApp1.exe.config
+F:\WindowsFormsApp1\WindowsFormsApp1\bin\x64\Debug\WindowsFormsApp1.exe
+F:\WindowsFormsApp1\WindowsFormsApp1\bin\x64\Debug\WindowsFormsApp1.pdb
+F:\WindowsFormsApp1\WindowsFormsApp1\bin\x64\Debug\NetGL.pdb
+F:\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+F:\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csproj.SuggestedBindingRedirects.cache
+F:\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.Form1.resources
+F:\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.Properties.Resources.resources
+F:\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+F:\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+F:\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csproj.CopyComplete
+F:\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.exe
+F:\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.pdb
+E:\WindowsFormsApp1\WindowsFormsApp1\bin\x64\Debug\WindowsFormsApp1.exe.config
+E:\WindowsFormsApp1\WindowsFormsApp1\bin\x64\Debug\WindowsFormsApp1.exe
+E:\WindowsFormsApp1\WindowsFormsApp1\bin\x64\Debug\WindowsFormsApp1.pdb
+E:\WindowsFormsApp1\WindowsFormsApp1\bin\x64\Debug\NetGL.dll
+E:\WindowsFormsApp1\WindowsFormsApp1\bin\x64\Debug\NetGL.pdb
+E:\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+E:\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csproj.SuggestedBindingRedirects.cache
+E:\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.Form1.resources
+E:\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.Properties.Resources.resources
+E:\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+E:\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+E:\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csproj.CopyComplete
+E:\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.exe
+E:\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.pdb
+E:\WindowsFormsApp1 - Kopie\WindowsFormsApp1\bin\x64\Debug\WindowsFormsApp1.exe.config
+E:\WindowsFormsApp1 - Kopie\WindowsFormsApp1\bin\x64\Debug\WindowsFormsApp1.exe
+E:\WindowsFormsApp1 - Kopie\WindowsFormsApp1\bin\x64\Debug\WindowsFormsApp1.pdb
+E:\WindowsFormsApp1 - Kopie\WindowsFormsApp1\bin\x64\Debug\NetGL.dll
+E:\WindowsFormsApp1 - Kopie\WindowsFormsApp1\bin\x64\Debug\NetGL.pdb
+E:\WindowsFormsApp1 - Kopie\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+E:\WindowsFormsApp1 - Kopie\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csproj.SuggestedBindingRedirects.cache
+E:\WindowsFormsApp1 - Kopie\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.Form1.resources
+E:\WindowsFormsApp1 - Kopie\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.Properties.Resources.resources
+E:\WindowsFormsApp1 - Kopie\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+E:\WindowsFormsApp1 - Kopie\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+E:\WindowsFormsApp1 - Kopie\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csproj.CopyComplete
+E:\WindowsFormsApp1 - Kopie\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.exe
+E:\WindowsFormsApp1 - Kopie\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.pdb
+E:\ModernGL Triangle\WindowsFormsApp1\bin\x64\Debug\WindowsFormsApp1.exe.config
+E:\ModernGL Triangle\WindowsFormsApp1\bin\x64\Debug\WindowsFormsApp1.exe
+E:\ModernGL Triangle\WindowsFormsApp1\bin\x64\Debug\WindowsFormsApp1.pdb
+E:\ModernGL Triangle\WindowsFormsApp1\bin\x64\Debug\NetGL.dll
+E:\ModernGL Triangle\WindowsFormsApp1\bin\x64\Debug\NetGL.pdb
+E:\ModernGL Triangle\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+E:\ModernGL Triangle\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csproj.SuggestedBindingRedirects.cache
+E:\ModernGL Triangle\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.Form1.resources
+E:\ModernGL Triangle\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.Properties.Resources.resources
+E:\ModernGL Triangle\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+E:\ModernGL Triangle\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+E:\ModernGL Triangle\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csproj.CopyComplete
+E:\ModernGL Triangle\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.exe
+E:\ModernGL Triangle\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.pdb
+E:\NetGL Examples\ModernGL Textured Triangle\WindowsFormsApp1\bin\x64\Debug\WindowsFormsApp1.exe.config
+E:\NetGL Examples\ModernGL Textured Triangle\WindowsFormsApp1\bin\x64\Debug\WindowsFormsApp1.exe
+E:\NetGL Examples\ModernGL Textured Triangle\WindowsFormsApp1\bin\x64\Debug\WindowsFormsApp1.pdb
+E:\NetGL Examples\ModernGL Textured Triangle\WindowsFormsApp1\bin\x64\Debug\NetGL.pdb
+E:\NetGL Examples\ModernGL Textured Triangle\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+E:\NetGL Examples\ModernGL Textured Triangle\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csproj.SuggestedBindingRedirects.cache
+E:\NetGL Examples\ModernGL Textured Triangle\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.Form1.resources
+E:\NetGL Examples\ModernGL Textured Triangle\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.Properties.Resources.resources
+E:\NetGL Examples\ModernGL Textured Triangle\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+E:\NetGL Examples\ModernGL Textured Triangle\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+E:\NetGL Examples\ModernGL Textured Triangle\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csproj.CopyComplete
+E:\NetGL Examples\ModernGL Textured Triangle\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.exe
+E:\NetGL Examples\ModernGL Textured Triangle\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.pdb
+E:\NetGL Examples\ModernGL Textured Triangle\WindowsFormsApp1\bin\x64\Debug\NetGL.dll
+E:\NetGL Examples\ModernGL Matrizes\WindowsFormsApp1\bin\x64\Debug\WindowsFormsApp1.exe.config
+E:\NetGL Examples\ModernGL Matrizes\WindowsFormsApp1\bin\x64\Debug\WindowsFormsApp1.exe
+E:\NetGL Examples\ModernGL Matrizes\WindowsFormsApp1\bin\x64\Debug\WindowsFormsApp1.pdb
+E:\NetGL Examples\ModernGL Matrizes\WindowsFormsApp1\bin\x64\Debug\NetGL.dll
+E:\NetGL Examples\ModernGL Matrizes\WindowsFormsApp1\bin\x64\Debug\NetGL.pdb
+E:\NetGL Examples\ModernGL Matrizes\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+E:\NetGL Examples\ModernGL Matrizes\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csproj.SuggestedBindingRedirects.cache
+E:\NetGL Examples\ModernGL Matrizes\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.Form1.resources
+E:\NetGL Examples\ModernGL Matrizes\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.Properties.Resources.resources
+E:\NetGL Examples\ModernGL Matrizes\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+E:\NetGL Examples\ModernGL Matrizes\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+E:\NetGL Examples\ModernGL Matrizes\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csproj.CopyComplete
+E:\NetGL Examples\ModernGL Matrizes\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.exe
+E:\NetGL Examples\ModernGL Matrizes\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.pdb
