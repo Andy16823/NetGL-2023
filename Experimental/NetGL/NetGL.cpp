@@ -977,6 +977,15 @@ namespace NetGL {
 			Console::WriteLine("Error while loading glActiveTexture");
 		}
 
+		glUniformMatrix4fv = (PFNGLUNIFORMMATRIX4FVPROC)wglGetProcAddress("glUniformMatrix4fv");
+		if (glUniformMatrix4fv != NULL)
+		{
+			Console::WriteLine("glUniformMatrix4fv loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glUniformMatrix4fv");
+		}
+
 		Console::WriteLine("ModernGL Loaded!");
 	}
 
@@ -1159,5 +1168,44 @@ namespace NetGL {
 	void NetGL::OpenGL::ActiveTexture(int texture)
 	{
 		glActiveTexture(texture);
+	}
+
+	array<float>^ NetGL::OpenGL::GetFloatArray(int name, int size)
+	{
+		float* result = new float[size];
+		glGetFloatv(name, result);
+
+		array<float>^ managedArray = gcnew array<float>(size);
+		System::Runtime::InteropServices::Marshal::Copy(IntPtr(result), managedArray, 0, size);
+		delete[] result;
+
+		return managedArray;
+	}
+
+	void NetGL::OpenGL::UniformMatrix4fv(int location, int count, bool transpose, array<float>^ matrixData) 
+	{
+		GLfloat* floatarr = new float[matrixData->Length];
+		for (int i = 0; i < matrixData->Length; i++)
+		{
+			floatarr[i] = matrixData[i];
+		}
+		glUniformMatrix4fv(location, count, transpose, floatarr);
+		delete[] floatarr;
+	}
+
+	void NetGL::OpenGL::SetModelviewMatrix(int location, int count, bool transpose)
+	{
+		float* result = new float[16];
+		glGetFloatv(GL_MODELVIEW_MATRIX, result);
+		glUniformMatrix4fv(location, count, transpose, result);
+		delete[] result;
+	}
+
+	void NetGL::OpenGL::SetProjectionMatrix(int location, int count, bool transpose)
+	{
+		float* result = new float[16];
+		glGetFloatv(GL_PROJECTION_MATRIX, result);
+		glUniformMatrix4fv(location, count, transpose, result);
+		delete[] result;
 	}
 }

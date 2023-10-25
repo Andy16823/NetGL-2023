@@ -30,6 +30,8 @@ namespace NetGL {
 		static int ModelView = GL_MODELVIEW;
 		static int Texture = GL_TEXTURE;
 		static int Color = GL_COLOR;
+		static int ProjectionMatrix = GL_PROJECTION_MATRIX;
+		static int ModelviewMatrix = GL_MODELVIEW_MATRIX;
 
 		// VBegin Mode //
 		static int Points = GL_POINT;
@@ -305,6 +307,7 @@ namespace NetGL {
 		PFNGLUNIFORM1IPROC glUniform1i;
 		PFNGLGETUNIFORMLOCATIONPROC glGetUniformLocation;
 		PFNGLACTIVETEXTUREPROC glActiveTexture;
+		PFNGLUNIFORMMATRIX4FVPROC glUniformMatrix4fv;
 
 		// Konstruktor
 		NetGL::OpenGL::OpenGL(void);
@@ -483,6 +486,10 @@ namespace NetGL {
 		void Uniform1I(int location, int v0);
 		int GetUniformLocation(int program, String^ name);
 		void ActiveTexture(int texture);
+		array<float>^ GetFloatArray(int name, int size);
+		void UniformMatrix4fv(int location, int count, bool transpose, array<float>^ matrixData);
+		void SetModelviewMatrix(int location, int count, bool transpose);
+		void SetProjectionMatrix(int location, int count, bool transpose);
 
 		// Basics
 		void LineWidth(float value);
