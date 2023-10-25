@@ -1188,13 +1188,8 @@ namespace NetGL {
 
 	void NetGL::OpenGL::UniformMatrix4fv(int location, int count, bool transpose, array<float>^ matrixData) 
 	{
-		GLfloat* floatarr = new float[matrixData->Length];
-		for (int i = 0; i < matrixData->Length; i++)
-		{
-			floatarr[i] = matrixData[i];
-		}
-		glUniformMatrix4fv(location, count, transpose, floatarr);
-		delete[] floatarr;
+		pin_ptr<float> pinnedArray = &matrixData[0];
+		glUniformMatrix4fv(location, count, transpose, pinnedArray);
 	}
 
 	void NetGL::OpenGL::SetModelviewMatrix(int location, int count, bool transpose)
