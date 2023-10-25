@@ -931,6 +931,62 @@ namespace NetGL {
 		else {
 			Console::WriteLine("Error while loading glUseProgram");
 		}
+
+		glDeleteShader = (PFNGLDELETESHADERPROC)wglGetProcAddress("glDeleteShader");
+		if (glDeleteShader != NULL)
+		{
+			Console::WriteLine("glDeleteShader loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glDeleteShader");
+		}
+
+		glDeleteProgram = (PFNGLDELETEPROGRAMPROC)wglGetProcAddress("glDeleteProgram");
+		if (glDeleteProgram != NULL)
+		{
+			Console::WriteLine("glDeleteProgram loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glDeleteProgram");
+		}
+
+		glUniform1i = (PFNGLUNIFORM1IPROC)wglGetProcAddress("glUniform1i");
+		if (glUniform1i != NULL)
+		{
+			Console::WriteLine("glUniform1i loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glUniform1i");
+		}
+
+		glGetUniformLocation = (PFNGLGETUNIFORMLOCATIONPROC)wglGetProcAddress("glGetUniformLocation");
+		if (glGetUniformLocation != NULL)
+		{
+			Console::WriteLine("glGetUniformLocation loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glGetUniformLocation");
+		}
+
+		glActiveTexture = (PFNGLACTIVETEXTUREPROC)wglGetProcAddress("glActiveTexture");
+		if (glActiveTexture != NULL)
+		{
+			Console::WriteLine("glActiveTexture loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glActiveTexture");
+		}
+
+		glUniformMatrix4fv = (PFNGLUNIFORMMATRIX4FVPROC)wglGetProcAddress("glUniformMatrix4fv");
+		if (glUniformMatrix4fv != NULL)
+		{
+			Console::WriteLine("glUniformMatrix4fv loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glUniformMatrix4fv");
+		}
+
+		Console::WriteLine("ModernGL Loaded!");
 	}
 
 
@@ -1083,5 +1139,73 @@ namespace NetGL {
 	void NetGL::OpenGL::UseProgram(int shaderProgram)
 	{
 		glUseProgram(shaderProgram);
+	}
+
+	void NetGL::OpenGL::DeleteShader(int shader)
+	{
+		glDeleteShader(shader);
+	}
+
+	void NetGL::OpenGL::DeleteProgram(int program)
+	{
+		glDeleteProgram(program);
+	}
+
+	void NetGL::OpenGL::Uniform1I(int location, int v0)
+	{
+		glUniform1i(location, v0);
+	}
+
+	int NetGL::OpenGL::GetUniformLocation(int program, String^ name)
+	{
+		const char* cname = (const char*)(System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi(name)).ToPointer();
+		GLuint location;
+		location = glGetUniformLocation(program, cname);
+		System::Runtime::InteropServices::Marshal::FreeHGlobal(IntPtr((void*)cname));
+		return location;
+	}
+
+	void NetGL::OpenGL::ActiveTexture(int texture)
+	{
+		glActiveTexture(texture);
+	}
+
+	array<float>^ NetGL::OpenGL::GetFloatArray(int name, int size)
+	{
+		float* result = new float[size];
+		glGetFloatv(name, result);
+
+		array<float>^ managedArray = gcnew array<float>(size);
+		System::Runtime::InteropServices::Marshal::Copy(IntPtr(result), managedArray, 0, size);
+		delete[] result;
+
+		return managedArray;
+	}
+
+	void NetGL::OpenGL::UniformMatrix4fv(int location, int count, bool transpose, array<float>^ matrixData) 
+	{
+		GLfloat* floatarr = new float[matrixData->Length];
+		for (int i = 0; i < matrixData->Length; i++)
+		{
+			floatarr[i] = matrixData[i];
+		}
+		glUniformMatrix4fv(location, count, transpose, floatarr);
+		delete[] floatarr;
+	}
+
+	void NetGL::OpenGL::SetModelviewMatrix(int location, int count, bool transpose)
+	{
+		float* result = new float[16];
+		glGetFloatv(GL_MODELVIEW_MATRIX, result);
+		glUniformMatrix4fv(location, count, transpose, result);
+		delete[] result;
+	}
+
+	void NetGL::OpenGL::SetProjectionMatrix(int location, int count, bool transpose)
+	{
+		float* result = new float[16];
+		glGetFloatv(GL_PROJECTION_MATRIX, result);
+		glUniformMatrix4fv(location, count, transpose, result);
+		delete[] result;
 	}
 }

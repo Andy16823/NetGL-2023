@@ -30,6 +30,8 @@ namespace NetGL {
 		static int ModelView = GL_MODELVIEW;
 		static int Texture = GL_TEXTURE;
 		static int Color = GL_COLOR;
+		static int ProjectionMatrix = GL_PROJECTION_MATRIX;
+		static int ModelviewMatrix = GL_MODELVIEW_MATRIX;
 
 		// VBegin Mode //
 		static int Points = GL_POINT;
@@ -248,6 +250,40 @@ namespace NetGL {
 		static int VertexShader = GL_VERTEX_SHADER;
 		static int FragmentShader = GL_FRAGMENT_SHADER;
 
+		static int Texture0 = GL_TEXTURE0;
+		static int Texture1 = GL_TEXTURE1;
+		static int Texture2 = GL_TEXTURE2;
+		static int Texture3 = GL_TEXTURE3;
+		static int Texture4 = GL_TEXTURE4;
+		static int Texture5 = GL_TEXTURE5;
+		static int Texture6 = GL_TEXTURE6;
+		static int Texture7 = GL_TEXTURE7;
+		static int Texture8 = GL_TEXTURE8;
+		static int Texture9 = GL_TEXTURE9;
+		static int Texture10 = GL_TEXTURE10;
+		static int Texture11 = GL_TEXTURE11;
+		static int Texture12 = GL_TEXTURE12;
+		static int Texture13 = GL_TEXTURE13;
+		static int Texture14 = GL_TEXTURE14;
+		static int Texture15 = GL_TEXTURE15;
+		static int Texture16 = GL_TEXTURE16;
+		static int Texture17 = GL_TEXTURE17;
+		static int Texture18 = GL_TEXTURE18;
+		static int Texture19 = GL_TEXTURE19;
+		static int Texture20 = GL_TEXTURE20;
+		static int Texture21 = GL_TEXTURE21;
+		static int Texture22 = GL_TEXTURE22;
+		static int Texture23 = GL_TEXTURE23;
+		static int Texture24 = GL_TEXTURE24;
+		static int Texture25 = GL_TEXTURE25;
+		static int Texture26 = GL_TEXTURE26;
+		static int Texture27 = GL_TEXTURE27;
+		static int Texture28 = GL_TEXTURE28;
+		static int Texture29 = GL_TEXTURE29;
+		static int Texture30 = GL_TEXTURE30;
+		static int Texture31 = GL_TEXTURE31;
+
+
 		// GL Wrapper
 		PFNGLBINDBUFFERPROC glBindBuffer;
 		PFNGLGENBUFFERSPROC glGenBuffers;
@@ -266,6 +302,12 @@ namespace NetGL {
 		PFNGLATTACHSHADERPROC glAttachShader;
 		PFNGLLINKPROGRAMPROC glLinkProgram;
 		PFNGLUSEPROGRAMPROC glUseProgram;
+		PFNGLDELETESHADERPROC glDeleteShader;
+		PFNGLDELETEPROGRAMPROC glDeleteProgram;
+		PFNGLUNIFORM1IPROC glUniform1i;
+		PFNGLGETUNIFORMLOCATIONPROC glGetUniformLocation;
+		PFNGLACTIVETEXTUREPROC glActiveTexture;
+		PFNGLUNIFORMMATRIX4FVPROC glUniformMatrix4fv;
 
 		// Konstruktor
 		NetGL::OpenGL::OpenGL(void);
@@ -439,6 +481,15 @@ namespace NetGL {
 		void AttachShader(int shaderProgram, int shader);
 		void LinkProgram(int shaderProgram);
 		void UseProgram(int shaderProgram);
+		void DeleteShader(int shader);
+		void DeleteProgram(int program);
+		void Uniform1I(int location, int v0);
+		int GetUniformLocation(int program, String^ name);
+		void ActiveTexture(int texture);
+		array<float>^ GetFloatArray(int name, int size);
+		void UniformMatrix4fv(int location, int count, bool transpose, array<float>^ matrixData);
+		void SetModelviewMatrix(int location, int count, bool transpose);
+		void SetProjectionMatrix(int location, int count, bool transpose);
 
 		// Basics
 		void LineWidth(float value);

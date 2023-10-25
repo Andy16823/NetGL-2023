@@ -727,42 +727,46 @@ namespace NetGL {
 
 	void NetGL::OpenGL::BufferData(int target, int size, array<float>^ data, int usage)
 	{
-		GLfloat* arr = new GLfloat[data->Length];
+		/*GLfloat* arr = new GLfloat[data->Length];
 		for (int i = 0; i < data->Length; i++)
 		{
 			arr[i] = data[i];
-		}
-		glBufferData(target, size, arr, usage);
+		}*/
+		pin_ptr<float> pinnedArray = &data[0];
+		glBufferData(target, size, pinnedArray, usage);
 	}
 
 	void NetGL::OpenGL::BufferData(int target, int size, array<short>^ data, int usage)
 	{
-		GLshort* arr = new GLshort[data->Length];
+		/*GLshort* arr = new GLshort[data->Length];
 		for (int i = 0; i < data->Length; i++)
 		{
 			arr[i] = data[i];
-		}
-		glBufferData(target, size, arr, usage);
+		}*/
+		pin_ptr<short> pdata = &data[0];
+		glBufferData(target, size, pdata, usage);
 	}
 
 	void NetGL::OpenGL::BufferData(int target, int size, array<int>^ data, int usage)
 	{
-		GLint* arr = new GLint[data->Length];
+		/*GLint* arr = new GLint[data->Length];
 		for (int i = 0; i < data->Length; i++)
 		{
 			arr[i] = data[i];
-		}
-		glBufferData(target, size, arr, usage);
+		}*/
+		pin_ptr<int> pdata = &data[0];
+		glBufferData(target, size, pdata, usage);
 	}
 
 	void NetGL::OpenGL::BufferData(int target, int size, array<double>^ data, int usage)
 	{
-		GLdouble* arr = new GLdouble[data->Length];
+		/*GLdouble* arr = new GLdouble[data->Length];
 		for (int i = 0; i < data->Length; i++)
 		{
 			arr[i] = data[i];
-		}
-		glBufferData(target, size, arr, usage);
+		}*/
+		pin_ptr<double> pdata = &data[0];
+		glBufferData(target, size, pdata, usage);
 	}
 
 	void NetGL::OpenGL::InitialExt()

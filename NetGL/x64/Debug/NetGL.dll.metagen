@@ -31,6 +31,12 @@ Class NetGL.OpenGL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     IntPtr glAttachShader : Public
     IntPtr glLinkProgram : Public
     IntPtr glUseProgram : Public
+    IntPtr glDeleteShader : Public
+    IntPtr glDeleteProgram : Public
+    IntPtr glUniform1i : Public
+    IntPtr glGetUniformLocation : Public
+    IntPtr glActiveTexture : Public
+    IntPtr glUniformMatrix4fv : Public
     Boolean modernGL : Public
     Int32 DepthBufferBit : Public, Static
     Int32 ColorBufferBit : Public, Static
@@ -40,6 +46,8 @@ Class NetGL.OpenGL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Int32 ModelView : Public, Static
     Int32 Texture : Public, Static
     Int32 Color : Public, Static
+    Int32 ProjectionMatrix : Public, Static
+    Int32 ModelviewMatrix : Public, Static
     Int32 Points : Public, Static
     Int32 Lines : Public, Static
     Int32 LineStrip : Public, Static
@@ -253,6 +261,38 @@ Class NetGL.OpenGL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Int32 OneMinusSrcAlpha : Public, Static
     Int32 VertexShader : Public, Static
     Int32 FragmentShader : Public, Static
+    Int32 Texture0 : Public, Static
+    Int32 Texture1 : Public, Static
+    Int32 Texture2 : Public, Static
+    Int32 Texture3 : Public, Static
+    Int32 Texture4 : Public, Static
+    Int32 Texture5 : Public, Static
+    Int32 Texture6 : Public, Static
+    Int32 Texture7 : Public, Static
+    Int32 Texture8 : Public, Static
+    Int32 Texture9 : Public, Static
+    Int32 Texture10 : Public, Static
+    Int32 Texture11 : Public, Static
+    Int32 Texture12 : Public, Static
+    Int32 Texture13 : Public, Static
+    Int32 Texture14 : Public, Static
+    Int32 Texture15 : Public, Static
+    Int32 Texture16 : Public, Static
+    Int32 Texture17 : Public, Static
+    Int32 Texture18 : Public, Static
+    Int32 Texture19 : Public, Static
+    Int32 Texture20 : Public, Static
+    Int32 Texture21 : Public, Static
+    Int32 Texture22 : Public, Static
+    Int32 Texture23 : Public, Static
+    Int32 Texture24 : Public, Static
+    Int32 Texture25 : Public, Static
+    Int32 Texture26 : Public, Static
+    Int32 Texture27 : Public, Static
+    Int32 Texture28 : Public, Static
+    Int32 Texture29 : Public, Static
+    Int32 Texture30 : Public, Static
+    Int32 Texture31 : Public, Static
   Methods:
     BindVertexArray(Int32): PrivateScope, Public, HideBySig
     EnableVertexAttribArray(Int32): PrivateScope, Public, HideBySig
@@ -269,6 +309,15 @@ Class NetGL.OpenGL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     AttachShader(Int32, Int32): PrivateScope, Public, HideBySig
     LinkProgram(Int32): PrivateScope, Public, HideBySig
     UseProgram(Int32): PrivateScope, Public, HideBySig
+    DeleteShader(Int32): PrivateScope, Public, HideBySig
+    DeleteProgram(Int32): PrivateScope, Public, HideBySig
+    Uniform1I(Int32, Int32): PrivateScope, Public, HideBySig
+    GetUniformLocation(Int32, String): PrivateScope, Public, HideBySig
+    ActiveTexture(Int32): PrivateScope, Public, HideBySig
+    GetFloatArray(Int32, Int32): PrivateScope, Public, HideBySig
+    UniformMatrix4fv(Int32, Int32, Boolean(HasFieldMarshal), Single[]): PrivateScope, Public, HideBySig
+    SetModelviewMatrix(Int32, Int32, Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
+    SetProjectionMatrix(Int32, Int32, Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
     LineWidth(Single): PrivateScope, Public, HideBySig
     Initial(IntPtr): PrivateScope, Public, HideBySig
     Clear(Int32): PrivateScope, Public, HideBySig
