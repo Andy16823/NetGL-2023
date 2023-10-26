@@ -37,6 +37,8 @@ Class NetGL.OpenGL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     IntPtr glGetUniformLocation : Public
     IntPtr glActiveTexture : Public
     IntPtr glUniformMatrix4fv : Public
+    IntPtr wglSwapIntervalEXT : Public
+    IntPtr glBufferSubData : Public
     Boolean modernGL : Public
     Int32 DepthBufferBit : Public, Static
     Int32 ColorBufferBit : Public, Static
@@ -294,6 +296,7 @@ Class NetGL.OpenGL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Int32 Texture30 : Public, Static
     Int32 Texture31 : Public, Static
   Methods:
+    GenVertexArrays(Int32): PrivateScope, Public, HideBySig
     BindVertexArray(Int32): PrivateScope, Public, HideBySig
     EnableVertexAttribArray(Int32): PrivateScope, Public, HideBySig
     VertexAttribPointer(Int32, Int32, Int32, Int32, Int32, Double[]): PrivateScope, Public, HideBySig
@@ -318,6 +321,7 @@ Class NetGL.OpenGL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     UniformMatrix4fv(Int32, Int32, Boolean(HasFieldMarshal), Single[]): PrivateScope, Public, HideBySig
     SetModelviewMatrix(Int32, Int32, Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
     SetProjectionMatrix(Int32, Int32, Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
+    SwapIntervalEXT(Int32): PrivateScope, Public, HideBySig
     LineWidth(Single): PrivateScope, Public, HideBySig
     Initial(IntPtr): PrivateScope, Public, HideBySig
     Clear(Int32): PrivateScope, Public, HideBySig
@@ -438,6 +442,7 @@ Class NetGL.OpenGL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     BufferData(Int32, Int32, Int32[], Int32): PrivateScope, Public, HideBySig
     BufferData(Int32, Int32, Int16[], Int32): PrivateScope, Public, HideBySig
     BufferData(Int32, Int32, Single[], Int32): PrivateScope, Public, HideBySig
+    BufferSubData(Int32, Int32, Int32, Single[]): PrivateScope, Public, HideBySig
     LookAt(Single, Single, Single, Single, Single, Single, Single, Single, Single): PrivateScope, Public, HideBySig
     Perspective(Single, Single, Single, Single): PrivateScope, Public, HideBySig
     Frustum(Single, Single, Single, Single, Single, Single): PrivateScope, Public, HideBySig
@@ -445,7 +450,6 @@ Class NetGL.OpenGL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Viewport(Single, Single, Single, Single): PrivateScope, Public, HideBySig
     PushMatrix(): PrivateScope, Public, HideBySig
     PopMatrix(): PrivateScope, Public, HideBySig
-    GenVertexArrays(Int32): PrivateScope, Public, HideBySig
 Class NetGL.Toolkit.TextureImporter: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(System.Drawing.Bitmap): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

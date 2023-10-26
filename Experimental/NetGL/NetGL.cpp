@@ -769,6 +769,12 @@ namespace NetGL {
 		glBufferData(target, size, pdata, usage);
 	}
 
+	void NetGL::OpenGL::BufferSubData(int target, int offset, int size, array<float>^ data) 
+	{
+		pin_ptr<float> pdata = &data[0];
+		glBufferSubData(target, offset, size, pdata);
+	}
+
 	void NetGL::OpenGL::InitialExt()
 	{
 		// Modern GL
@@ -990,6 +996,24 @@ namespace NetGL {
 			Console::WriteLine("Error while loading glUniformMatrix4fv");
 		}
 
+		wglSwapIntervalEXT = (PFNWGLSWAPINTERVALEXTPROC)wglGetProcAddress("wglSwapIntervalEXT");
+		if (wglSwapIntervalEXT != NULL)
+		{
+			Console::WriteLine("wglSwapIntervalEXT loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading wglSwapIntervalEXT");
+		}
+
+		glBufferSubData = (PFNGLBUFFERSUBDATAPROC)wglGetProcAddress("glBufferSubData");
+		if (glBufferSubData != NULL)
+		{
+			Console::WriteLine("glBufferSubData loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glBufferSubData");
+		}
+
 		Console::WriteLine("ModernGL Loaded!");
 	}
 
@@ -1206,5 +1230,9 @@ namespace NetGL {
 		glGetFloatv(GL_PROJECTION_MATRIX, result);
 		glUniformMatrix4fv(location, count, transpose, result);
 		delete[] result;
+	}
+
+	void NetGL::OpenGL::SwapIntervalEXT(int interval) {
+		wglSwapIntervalEXT(interval);
 	}
 }

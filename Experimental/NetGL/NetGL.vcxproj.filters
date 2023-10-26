@@ -33,6 +33,9 @@
     <ClInclude Include="TextureImporter.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="wglext.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="NetGL.cpp">

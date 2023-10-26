@@ -8,6 +8,7 @@
 #include <string>
 #include "glcorearb.h"
 #include <msclr\marshal_cppstd.h>
+#include "wglext.h"
 
 
 using namespace System;
@@ -308,6 +309,8 @@ namespace NetGL {
 		PFNGLGETUNIFORMLOCATIONPROC glGetUniformLocation;
 		PFNGLACTIVETEXTUREPROC glActiveTexture;
 		PFNGLUNIFORMMATRIX4FVPROC glUniformMatrix4fv;
+		PFNWGLSWAPINTERVALEXTPROC wglSwapIntervalEXT;
+		PFNGLBUFFERSUBDATAPROC glBufferSubData;
 
 		// Konstruktor
 		NetGL::OpenGL::OpenGL(void);
@@ -452,6 +455,7 @@ namespace NetGL {
 		void BufferData(int target, int size, array<short>^ data, int usage);
 		void BufferData(int target, int size, array<int>^ data, int usage);
 		void BufferData(int target, int size, array<double>^ data, int usage);
+		void BufferSubData(int target, int offset, int size, array<float>^ data);
 
 		// Matrix & View
 		void LookAt(float eyeX, float eyeY, float eyeZ, float centerX, float centerY, float centerZ, float upX, float upY, float upZ);
@@ -490,6 +494,7 @@ namespace NetGL {
 		void UniformMatrix4fv(int location, int count, bool transpose, array<float>^ matrixData);
 		void SetModelviewMatrix(int location, int count, bool transpose);
 		void SetProjectionMatrix(int location, int count, bool transpose);
+		void SwapIntervalEXT(int interval);
 
 		// Basics
 		void LineWidth(float value);
