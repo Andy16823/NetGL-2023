@@ -1014,6 +1014,15 @@ namespace NetGL {
 			Console::WriteLine("Error while loading glBufferSubData");
 		}
 
+		glUniform1f = (PFNGLUNIFORM1FPROC)wglGetProcAddress("glUniform1f");
+		if (glUniform1f != NULL)
+		{
+			Console::WriteLine("glUniform1f loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glUniform1f");
+		}
+
 		Console::WriteLine("ModernGL Loaded!");
 	}
 
@@ -1184,6 +1193,10 @@ namespace NetGL {
 		glUniform1i(location, v0);
 	}
 
+	void NetGL::OpenGL::Uniform1f(int location, float value) {
+		glUniform1f(location, value);
+	}
+
 	int NetGL::OpenGL::GetUniformLocation(int program, String^ name)
 	{
 		const char* cname = (const char*)(System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi(name)).ToPointer();
@@ -1235,4 +1248,13 @@ namespace NetGL {
 	void NetGL::OpenGL::SwapIntervalEXT(int interval) {
 		wglSwapIntervalEXT(interval);
 	}
+
+	void NetGL::OpenGL::GlCullFace(int mode) {
+		glCullFace(mode);
+	}
+
+	void NetGL::OpenGL::DepthFunc(int mode) {
+		glDepthFunc(mode);
+	}
+
 }

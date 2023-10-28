@@ -311,6 +311,7 @@ namespace NetGL {
 		PFNGLUNIFORMMATRIX4FVPROC glUniformMatrix4fv;
 		PFNWGLSWAPINTERVALEXTPROC wglSwapIntervalEXT;
 		PFNGLBUFFERSUBDATAPROC glBufferSubData;
+		PFNGLUNIFORM1FPROC glUniform1f;
 
 		// Konstruktor
 		NetGL::OpenGL::OpenGL(void);
@@ -488,6 +489,7 @@ namespace NetGL {
 		void DeleteShader(int shader);
 		void DeleteProgram(int program);
 		void Uniform1I(int location, int v0);
+		void Uniform1f(int location, float value);
 		int GetUniformLocation(int program, String^ name);
 		void ActiveTexture(int texture);
 		array<float>^ GetFloatArray(int name, int size);
@@ -495,6 +497,8 @@ namespace NetGL {
 		void SetModelviewMatrix(int location, int count, bool transpose);
 		void SetProjectionMatrix(int location, int count, bool transpose);
 		void SwapIntervalEXT(int interval);
+		void GlCullFace(int mode);
+		void DepthFunc(int mode);
 
 		// Basics
 		void LineWidth(float value);

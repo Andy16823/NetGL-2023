@@ -39,6 +39,7 @@ Class NetGL.OpenGL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     IntPtr glUniformMatrix4fv : Public
     IntPtr wglSwapIntervalEXT : Public
     IntPtr glBufferSubData : Public
+    IntPtr glUniform1f : Public
     Boolean modernGL : Public
     Int32 DepthBufferBit : Public, Static
     Int32 ColorBufferBit : Public, Static
@@ -315,6 +316,7 @@ Class NetGL.OpenGL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     DeleteShader(Int32): PrivateScope, Public, HideBySig
     DeleteProgram(Int32): PrivateScope, Public, HideBySig
     Uniform1I(Int32, Int32): PrivateScope, Public, HideBySig
+    Uniform1f(Int32, Single): PrivateScope, Public, HideBySig
     GetUniformLocation(Int32, String): PrivateScope, Public, HideBySig
     ActiveTexture(Int32): PrivateScope, Public, HideBySig
     GetFloatArray(Int32, Int32): PrivateScope, Public, HideBySig
@@ -322,6 +324,8 @@ Class NetGL.OpenGL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     SetModelviewMatrix(Int32, Int32, Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
     SetProjectionMatrix(Int32, Int32, Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
     SwapIntervalEXT(Int32): PrivateScope, Public, HideBySig
+    GlCullFace(Int32): PrivateScope, Public, HideBySig
+    DepthFunc(Int32): PrivateScope, Public, HideBySig
     LineWidth(Single): PrivateScope, Public, HideBySig
     Initial(IntPtr): PrivateScope, Public, HideBySig
     Clear(Int32): PrivateScope, Public, HideBySig
