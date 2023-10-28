@@ -40,6 +40,7 @@ Class NetGL.OpenGL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     IntPtr wglSwapIntervalEXT : Public
     IntPtr glBufferSubData : Public
     IntPtr glUniform1f : Public
+    IntPtr glGenerateMipmap : Public
     Boolean modernGL : Public
     Int32 DepthBufferBit : Public, Static
     Int32 ColorBufferBit : Public, Static
@@ -326,6 +327,7 @@ Class NetGL.OpenGL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     SwapIntervalEXT(Int32): PrivateScope, Public, HideBySig
     GlCullFace(Int32): PrivateScope, Public, HideBySig
     DepthFunc(Int32): PrivateScope, Public, HideBySig
+    GenerateMipMap(Int32): PrivateScope, Public, HideBySig
     LineWidth(Single): PrivateScope, Public, HideBySig
     Initial(IntPtr): PrivateScope, Public, HideBySig
     Clear(Int32): PrivateScope, Public, HideBySig

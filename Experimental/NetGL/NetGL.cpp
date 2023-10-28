@@ -1023,6 +1023,15 @@ namespace NetGL {
 			Console::WriteLine("Error while loading glUniform1f");
 		}
 
+		glGenerateMipmap = (PFNGLGENERATEMIPMAPPROC)wglGetProcAddress("glGenerateMipmap");
+		if (glGenerateMipmap != NULL)
+		{
+			Console::WriteLine("glGenerateMipmap loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glGenerateMipmap");
+		}
+
 		Console::WriteLine("ModernGL Loaded!");
 	}
 
@@ -1245,16 +1254,24 @@ namespace NetGL {
 		delete[] result;
 	}
 
-	void NetGL::OpenGL::SwapIntervalEXT(int interval) {
+	void NetGL::OpenGL::SwapIntervalEXT(int interval) 
+	{
 		wglSwapIntervalEXT(interval);
 	}
 
-	void NetGL::OpenGL::GlCullFace(int mode) {
+	void NetGL::OpenGL::GlCullFace(int mode) 
+	{
 		glCullFace(mode);
 	}
 
-	void NetGL::OpenGL::DepthFunc(int mode) {
+	void NetGL::OpenGL::DepthFunc(int mode) 
+	{
 		glDepthFunc(mode);
+	}
+
+	void NetGL::OpenGL::GenerateMipMap(int target) 
+	{
+		glGenerateMipmap(target);
 	}
 
 }

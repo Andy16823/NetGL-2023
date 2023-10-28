@@ -312,6 +312,7 @@ namespace NetGL {
 		PFNWGLSWAPINTERVALEXTPROC wglSwapIntervalEXT;
 		PFNGLBUFFERSUBDATAPROC glBufferSubData;
 		PFNGLUNIFORM1FPROC glUniform1f;
+		PFNGLGENERATEMIPMAPPROC glGenerateMipmap;
 
 		// Konstruktor
 		NetGL::OpenGL::OpenGL(void);
@@ -499,6 +500,7 @@ namespace NetGL {
 		void SwapIntervalEXT(int interval);
 		void GlCullFace(int mode);
 		void DepthFunc(int mode);
+		void GenerateMipMap(int target);
 
 		// Basics
 		void LineWidth(float value);
