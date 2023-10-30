@@ -111,6 +111,10 @@ namespace WindowsFormsApp1
             gl.AttachShader(program, vertexShader);
             gl.AttachShader(program, fragmentShader);
             gl.LinkProgram(program);
+
+            gl.DeleteShader(vertexShader);
+            gl.DeleteShader(fragmentShader);
+
             gl.UseProgram(program);
 
             //Load the texture
@@ -166,7 +170,7 @@ namespace WindowsFormsApp1
                 Matrix4x4 v_mat = Matrix4x4.LookAt(new Vec3(0f, 0f, 1f), new Vec3(0f, 0f, 0f), new Vec3(0f, 1f, 0f));
 
                 //Now we create the modelview matrix. Its a product from the Translate, Rotate and Scale matrix
-                Matrix4x4 mt_mat = Matrix4x4.Translate(new Vec3(0f, 0f, 0f));
+                Matrix4x4 mt_mat = Matrix4x4.Translate(new Vec3(0f, 0f, -0.5f));
                 Matrix4x4 mr_mat = Matrix4x4.RotateZ(rotate);
                 Matrix4x4 ms_mat = Matrix4x4.Scale(new Vec3(5f, 5f, 0f));
                 Matrix4x4 m_mat = mt_mat * mr_mat * ms_mat;
