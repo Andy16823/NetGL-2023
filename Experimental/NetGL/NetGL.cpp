@@ -271,6 +271,11 @@ namespace NetGL {
 		return glGetError();
 	}
 
+	void NetGL::OpenGL::TexImage2D(int target, int level, int internalformat, int width, int height, int border, int format, int type)
+	{
+		glTexImage2D(target, level, internalformat, width, height, border, format, type, NULL);
+	}
+
 	void NetGL::OpenGL::TexImage2D(int target, int level, int internalformat, int width, int height, int border, int format, int type, array<int>^ data)
 	{
 		glTexImage2D(target, level, internalformat, width, height, border, format, type, &data);
@@ -1032,6 +1037,78 @@ namespace NetGL {
 			Console::WriteLine("Error while loading glGenerateMipmap");
 		}
 
+		glGenFramebuffers = (PFNGLGENFRAMEBUFFERSPROC)wglGetProcAddress("glGenFramebuffers");
+		if (glGenFramebuffers != NULL)
+		{
+			Console::WriteLine("glGenFramebuffers loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glGenFramebuffers");
+		}
+
+		glBindFramebuffer = (PFNGLBINDFRAMEBUFFERPROC)wglGetProcAddress("glBindFramebuffer");
+		if (glBindFramebuffer != NULL)
+		{
+			Console::WriteLine("glBindFramebuffer loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glBindFramebuffer");
+		}
+
+		glCheckFramebufferStatus = (PFNGLCHECKFRAMEBUFFERSTATUSPROC)wglGetProcAddress("glCheckFramebufferStatus");
+		if (glCheckFramebufferStatus != NULL)
+		{
+			Console::WriteLine("glCheckFramebufferStatus loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glCheckFramebufferStatus");
+		}
+
+		glFramebufferTexture2D = (PFNGLFRAMEBUFFERTEXTURE2DPROC)wglGetProcAddress("glFramebufferTexture2D");
+		if (glFramebufferTexture2D != NULL)
+		{
+			Console::WriteLine("glFramebufferTexture2D loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glFramebufferTexture2D");
+		}
+
+		glGenRenderbuffers = (PFNGLGENRENDERBUFFERSPROC)wglGetProcAddress("glGenRenderbuffers");
+		if (glGenRenderbuffers != NULL)
+		{
+			Console::WriteLine("glGenRenderbuffers loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glGenRenderbuffers");
+		}
+
+		glBindRenderbuffer = (PFNGLBINDRENDERBUFFERPROC)wglGetProcAddress("glBindRenderbuffer");
+		if (glBindRenderbuffer != NULL)
+		{
+			Console::WriteLine("glBindRenderbuffer loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glBindRenderbuffer");
+		}
+
+		glRenderbufferStorage = (PFNGLRENDERBUFFERSTORAGEPROC)wglGetProcAddress("glRenderbufferStorage");
+		if (glRenderbufferStorage != NULL)
+		{
+			Console::WriteLine("glRenderbufferStorage loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glRenderbufferStorage");
+		}
+
+		glFramebufferRenderbuffer = (PFNGLFRAMEBUFFERRENDERBUFFERPROC)wglGetProcAddress("glFramebufferRenderbuffer");
+		if (glFramebufferRenderbuffer != NULL)
+		{
+			Console::WriteLine("glFramebufferRenderbuffer loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glFramebufferRenderbuffer");
+		}
+
 		Console::WriteLine("ModernGL Loaded!");
 	}
 
@@ -1272,6 +1349,53 @@ namespace NetGL {
 	void NetGL::OpenGL::GenerateMipMap(int target) 
 	{
 		glGenerateMipmap(target);
+	}
+
+	int NetGL::OpenGL::GenFramebuffers(int n) 
+	{
+		GLuint ID;
+		glGenFramebuffers(n, &ID);
+		return (int)ID;
+	}
+
+	void NetGL::OpenGL::BindFramebuffer(int target, int id)
+	{
+		glBindFramebuffer(target, id);
+	}
+
+	int NetGL::OpenGL::CheckFramebufferStatus(int target) {
+		return glCheckFramebufferStatus(target);
+	}
+
+	void NetGL::OpenGL::FrameBufferTexture2D(int target, int attachment, int textarage, int texture, int level)
+	{
+		glFramebufferTexture2D(target, attachment, textarage, texture, level);
+	}
+
+	void NetGL::OpenGL::DrawPixels(int width, int height, int format, int type)
+	{
+		glDrawPixels(width, height, format, type, nullptr);
+	}
+
+	int NetGL::OpenGL::GenRenderbuffers(int n)
+	{
+		GLuint ID;
+		glGenRenderbuffers(n, &ID);
+		return (int)ID;
+	}
+	void NetGL::OpenGL::BindRenderbuffer(int target, int id)
+	{
+		glBindRenderbuffer(target, id);
+	}
+
+	void NetGL::OpenGL::RenderbufferStorage(int target, int internalFormat, int width, int height)
+	{
+		glRenderbufferStorage(target, internalFormat, width, height);
+	}
+	
+	void NetGL::OpenGL::FramebufferRenderbuffer(int target, int attachment, int renderBufferTarget, int renderBuffer)
+	{
+		glFramebufferRenderbuffer(target, attachment, renderBufferTarget, renderBuffer);
 	}
 
 }

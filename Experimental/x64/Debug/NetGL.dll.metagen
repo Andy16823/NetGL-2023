@@ -41,6 +41,14 @@ Class NetGL.OpenGL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     IntPtr glBufferSubData : Public
     IntPtr glUniform1f : Public
     IntPtr glGenerateMipmap : Public
+    IntPtr glGenFramebuffers : Public
+    IntPtr glBindFramebuffer : Public
+    IntPtr glCheckFramebufferStatus : Public
+    IntPtr glFramebufferTexture2D : Public
+    IntPtr glGenRenderbuffers : Public
+    IntPtr glBindRenderbuffer : Public
+    IntPtr glRenderbufferStorage : Public
+    IntPtr glFramebufferRenderbuffer : Public
     Boolean modernGL : Public
     Int32 DepthBufferBit : Public, Static
     Int32 ColorBufferBit : Public, Static
@@ -297,7 +305,59 @@ Class NetGL.OpenGL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Int32 Texture29 : Public, Static
     Int32 Texture30 : Public, Static
     Int32 Texture31 : Public, Static
+    Int32 DrawFrameBuffer : Public, Static
+    Int32 ReadFrameBuffer : Public, Static
+    Int32 FrameBuffer : Public, Static
+    Int32 FrameBufferComplete : Public, Static
+    Int32 FrameBufferUndefined : Public, Static
+    Int32 FrameBufferIncompleteAttachment : Public, Static
+    Int32 FrameBufferIncompleteMissingAttachment : Public, Static
+    Int32 FrameBufferIncompleteDrawBuffer : Public, Static
+    Int32 FrameBufferIncompleteReadBuffer : Public, Static
+    Int32 FrameBufferUnsupported : Public, Static
+    Int32 FrameBufferIncompleteMultisample : Public, Static
+    Int32 FrameBufferIncompleteLayerTargets : Public, Static
+    Int32 DepthAttachment : Public, Static
+    Int32 StencilAttachment : Public, Static
+    Int32 StencilIndex : Public, Static
+    Int32 DepthStencilAttachment : Public, Static
+    Int32 RenderBuffer : Public, Static
+    Int32 Depth24Stencil8 : Public, Static
+    Int32 DepthComponent24 : Public, Static
+    Int32 ColorAttachment0 : Public, Static
+    Int32 ColorAttachment1 : Public, Static
+    Int32 ColorAttachment2 : Public, Static
+    Int32 ColorAttachment3 : Public, Static
+    Int32 ColorAttachment4 : Public, Static
+    Int32 ColorAttachment5 : Public, Static
+    Int32 ColorAttachment6 : Public, Static
+    Int32 ColorAttachment7 : Public, Static
+    Int32 ColorAttachment8 : Public, Static
+    Int32 ColorAttachment9 : Public, Static
+    Int32 ColorAttachment10 : Public, Static
+    Int32 ColorAttachment11 : Public, Static
+    Int32 ColorAttachment12 : Public, Static
+    Int32 ColorAttachment13 : Public, Static
+    Int32 ColorAttachment14 : Public, Static
+    Int32 ColorAttachment15 : Public, Static
+    Int32 ColorAttachment16 : Public, Static
+    Int32 ColorAttachment17 : Public, Static
+    Int32 ColorAttachment18 : Public, Static
+    Int32 ColorAttachment19 : Public, Static
+    Int32 ColorAttachment20 : Public, Static
+    Int32 ColorAttachment21 : Public, Static
+    Int32 ColorAttachment22 : Public, Static
+    Int32 ColorAttachment23 : Public, Static
+    Int32 ColorAttachment24 : Public, Static
+    Int32 ColorAttachment25 : Public, Static
+    Int32 ColorAttachment26 : Public, Static
+    Int32 ColorAttachment27 : Public, Static
+    Int32 ColorAttachment28 : Public, Static
+    Int32 ColorAttachment29 : Public, Static
+    Int32 ColorAttachment30 : Public, Static
+    Int32 ColorAttachment31 : Public, Static
   Methods:
+    PopMatrix(): PrivateScope, Public, HideBySig
     GenVertexArrays(Int32): PrivateScope, Public, HideBySig
     BindVertexArray(Int32): PrivateScope, Public, HideBySig
     EnableVertexAttribArray(Int32): PrivateScope, Public, HideBySig
@@ -328,6 +388,15 @@ Class NetGL.OpenGL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     GlCullFace(Int32): PrivateScope, Public, HideBySig
     DepthFunc(Int32): PrivateScope, Public, HideBySig
     GenerateMipMap(Int32): PrivateScope, Public, HideBySig
+    GenFramebuffers(Int32): PrivateScope, Public, HideBySig
+    BindFramebuffer(Int32, Int32): PrivateScope, Public, HideBySig
+    CheckFramebufferStatus(Int32): PrivateScope, Public, HideBySig
+    FrameBufferTexture2D(Int32, Int32, Int32, Int32, Int32): PrivateScope, Public, HideBySig
+    DrawPixels(Int32, Int32, Int32, Int32): PrivateScope, Public, HideBySig
+    GenRenderbuffers(Int32): PrivateScope, Public, HideBySig
+    BindRenderbuffer(Int32, Int32): PrivateScope, Public, HideBySig
+    RenderbufferStorage(Int32, Int32, Int32, Int32): PrivateScope, Public, HideBySig
+    FramebufferRenderbuffer(Int32, Int32, Int32, Int32): PrivateScope, Public, HideBySig
     LineWidth(Single): PrivateScope, Public, HideBySig
     Initial(IntPtr): PrivateScope, Public, HideBySig
     Clear(Int32): PrivateScope, Public, HideBySig
@@ -435,6 +504,7 @@ Class NetGL.OpenGL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     TexImage2D(Int32, Int32, Int32, Int32, Int32, Int32, Int32, Int32, Int16[]): PrivateScope, Public, HideBySig
     TexImage2D(Int32, Int32, Int32, Int32, Int32, Int32, Int32, Int32, Byte[]): PrivateScope, Public, HideBySig
     TexImage2D(Int32, Int32, Int32, Int32, Int32, Int32, Int32, Int32, Int32[]): PrivateScope, Public, HideBySig
+    TexImage2D(Int32, Int32, Int32, Int32, Int32, Int32, Int32, Int32): PrivateScope, Public, HideBySig
     Build2DMipmaps(Int32, Int32, Int32, Int32, Bitmap): PrivateScope, Public, HideBySig
     BlendFunc(Int32, Int32): PrivateScope, Public, HideBySig
     Lightf(Int32, Int32, Single): PrivateScope, Public, HideBySig
@@ -455,7 +525,6 @@ Class NetGL.OpenGL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Ortho(Single, Single, Single, Single, Single, Single): PrivateScope, Public, HideBySig
     Viewport(Single, Single, Single, Single): PrivateScope, Public, HideBySig
     PushMatrix(): PrivateScope, Public, HideBySig
-    PopMatrix(): PrivateScope, Public, HideBySig
 Class NetGL.Toolkit.TextureImporter: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(System.Drawing.Bitmap): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

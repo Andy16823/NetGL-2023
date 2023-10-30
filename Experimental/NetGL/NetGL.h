@@ -284,6 +284,61 @@ namespace NetGL {
 		static int Texture30 = GL_TEXTURE30;
 		static int Texture31 = GL_TEXTURE31;
 
+		static int DrawFrameBuffer = GL_DRAW_FRAMEBUFFER;
+		static int ReadFrameBuffer = GL_READ_FRAMEBUFFER;
+		static int FrameBuffer = GL_FRAMEBUFFER;
+		static int FrameBufferComplete = GL_FRAMEBUFFER_COMPLETE;
+		static int FrameBufferUndefined = GL_FRAMEBUFFER_UNDEFINED;
+		static int FrameBufferIncompleteAttachment = GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT;
+		static int FrameBufferIncompleteMissingAttachment = GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT;
+		static int FrameBufferIncompleteDrawBuffer = GL_FRAMEBUFFER_INCOMPLETE_DRAW_BUFFER;
+		static int FrameBufferIncompleteReadBuffer = GL_FRAMEBUFFER_INCOMPLETE_READ_BUFFER;
+		static int FrameBufferUnsupported = GL_FRAMEBUFFER_UNSUPPORTED;
+		static int FrameBufferIncompleteMultisample = GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE;
+		static int FrameBufferIncompleteLayerTargets = GL_FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS;
+		static int DepthAttachment = GL_DEPTH_ATTACHMENT;
+		static int StencilAttachment = GL_STENCIL_ATTACHMENT;
+		static int StencilIndex = GL_STENCIL_INDEX;
+		static int DepthStencilAttachment = GL_DEPTH_STENCIL_ATTACHMENT;
+		static int RenderBuffer = GL_RENDERBUFFER;
+		static int Depth24Stencil8 = GL_DEPTH24_STENCIL8;
+		static int DepthComponent24 = GL_DEPTH_COMPONENT24;
+		
+		static int ColorAttachment0 = GL_COLOR_ATTACHMENT0;
+		static int ColorAttachment1 = GL_COLOR_ATTACHMENT1;
+		static int ColorAttachment2 = GL_COLOR_ATTACHMENT2;
+		static int ColorAttachment3 = GL_COLOR_ATTACHMENT3;
+		static int ColorAttachment4 = GL_COLOR_ATTACHMENT4;
+		static int ColorAttachment5 = GL_COLOR_ATTACHMENT5;
+		static int ColorAttachment6 = GL_COLOR_ATTACHMENT6;
+		static int ColorAttachment7 = GL_COLOR_ATTACHMENT7;
+		static int ColorAttachment8 = GL_COLOR_ATTACHMENT8;
+		static int ColorAttachment9 = GL_COLOR_ATTACHMENT9;
+		static int ColorAttachment10 = GL_COLOR_ATTACHMENT10;
+		static int ColorAttachment11 = GL_COLOR_ATTACHMENT11;
+		static int ColorAttachment12 = GL_COLOR_ATTACHMENT12;
+		static int ColorAttachment13 = GL_COLOR_ATTACHMENT13;
+		static int ColorAttachment14 = GL_COLOR_ATTACHMENT14;
+		static int ColorAttachment15 = GL_COLOR_ATTACHMENT15;
+		static int ColorAttachment16 = GL_COLOR_ATTACHMENT16;
+		static int ColorAttachment17 = GL_COLOR_ATTACHMENT17;
+		static int ColorAttachment18 = GL_COLOR_ATTACHMENT18;
+		static int ColorAttachment19 = GL_COLOR_ATTACHMENT19;
+		static int ColorAttachment20 = GL_COLOR_ATTACHMENT20;
+		static int ColorAttachment21 = GL_COLOR_ATTACHMENT21;
+		static int ColorAttachment22 = GL_COLOR_ATTACHMENT22;
+		static int ColorAttachment23 = GL_COLOR_ATTACHMENT23;
+		static int ColorAttachment24 = GL_COLOR_ATTACHMENT24;
+		static int ColorAttachment25 = GL_COLOR_ATTACHMENT25;
+		static int ColorAttachment26 = GL_COLOR_ATTACHMENT26;
+		static int ColorAttachment27 = GL_COLOR_ATTACHMENT27;
+		static int ColorAttachment28 = GL_COLOR_ATTACHMENT28;
+		static int ColorAttachment29 = GL_COLOR_ATTACHMENT29;
+		static int ColorAttachment30 = GL_COLOR_ATTACHMENT30;
+		static int ColorAttachment31 = GL_COLOR_ATTACHMENT31;
+
+
+
 
 		// GL Wrapper
 		PFNGLBINDBUFFERPROC glBindBuffer;
@@ -313,6 +368,14 @@ namespace NetGL {
 		PFNGLBUFFERSUBDATAPROC glBufferSubData;
 		PFNGLUNIFORM1FPROC glUniform1f;
 		PFNGLGENERATEMIPMAPPROC glGenerateMipmap;
+		PFNGLGENFRAMEBUFFERSPROC glGenFramebuffers;
+		PFNGLBINDFRAMEBUFFERPROC glBindFramebuffer;
+		PFNGLCHECKFRAMEBUFFERSTATUSPROC glCheckFramebufferStatus;
+		PFNGLFRAMEBUFFERTEXTURE2DPROC glFramebufferTexture2D;
+		PFNGLGENRENDERBUFFERSPROC glGenRenderbuffers;
+		PFNGLBINDRENDERBUFFERPROC glBindRenderbuffer;
+		PFNGLRENDERBUFFERSTORAGEPROC glRenderbufferStorage;
+		PFNGLFRAMEBUFFERRENDERBUFFERPROC glFramebufferRenderbuffer;
 
 		// Konstruktor
 		NetGL::OpenGL::OpenGL(void);
@@ -434,6 +497,7 @@ namespace NetGL {
 		void BindTexture(int target, int texture);
 		void DeleteTextures(int n, int texture);
 		void TexParameteri(int target, int pname, int param);
+		void TexImage2D(int target, int level, int internalformat, int width, int height, int border, int format, int type);
 		void TexImage2D(int target, int level, int internalformat, int width, int height, int border, int format, int type, array<int>^ data);
 		void TexImage2D(int target, int level, int internalformat, int width, int height, int border, int format, int type, array<byte>^ data);
 		void TexImage2D(int target, int level, int internalformat, int width, int height, int border, int format, int type, array<short>^ data);
@@ -501,6 +565,16 @@ namespace NetGL {
 		void GlCullFace(int mode);
 		void DepthFunc(int mode);
 		void GenerateMipMap(int target);
+
+		int GenFramebuffers(int n);
+		void BindFramebuffer(int target, int id);
+		int CheckFramebufferStatus(int target);
+		void FrameBufferTexture2D(int target, int attachment, int textarage, int texture, int level);
+		void DrawPixels(int width, int height, int format, int type);
+		int GenRenderbuffers(int n);
+		void BindRenderbuffer(int target, int id);
+		void RenderbufferStorage(int target, int internalFormat, int width, int height);
+		void FramebufferRenderbuffer(int target, int attachment, int renderBufferTarget, int renderBuffer);
 
 		// Basics
 		void LineWidth(float value);
