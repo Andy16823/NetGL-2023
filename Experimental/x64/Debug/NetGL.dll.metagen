@@ -49,6 +49,7 @@ Class NetGL.OpenGL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     IntPtr glBindRenderbuffer : Public
     IntPtr glRenderbufferStorage : Public
     IntPtr glFramebufferRenderbuffer : Public
+    IntPtr glUniform3f : Public
     Boolean modernGL : Public
     Int32 DepthBufferBit : Public, Static
     Int32 ColorBufferBit : Public, Static
@@ -356,6 +357,8 @@ Class NetGL.OpenGL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Int32 ColorAttachment29 : Public, Static
     Int32 ColorAttachment30 : Public, Static
     Int32 ColorAttachment31 : Public, Static
+    Int32 None : Public, Static
+    Int32 One : Public, Static
   Methods:
     PopMatrix(): PrivateScope, Public, HideBySig
     GenVertexArrays(Int32): PrivateScope, Public, HideBySig
@@ -378,6 +381,7 @@ Class NetGL.OpenGL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     DeleteProgram(Int32): PrivateScope, Public, HideBySig
     Uniform1I(Int32, Int32): PrivateScope, Public, HideBySig
     Uniform1f(Int32, Single): PrivateScope, Public, HideBySig
+    Uniform3f(Int32, Single, Single, Single): PrivateScope, Public, HideBySig
     GetUniformLocation(Int32, String): PrivateScope, Public, HideBySig
     ActiveTexture(Int32): PrivateScope, Public, HideBySig
     GetFloatArray(Int32, Int32): PrivateScope, Public, HideBySig
@@ -397,6 +401,9 @@ Class NetGL.OpenGL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     BindRenderbuffer(Int32, Int32): PrivateScope, Public, HideBySig
     RenderbufferStorage(Int32, Int32, Int32, Int32): PrivateScope, Public, HideBySig
     FramebufferRenderbuffer(Int32, Int32, Int32, Int32): PrivateScope, Public, HideBySig
+    DrawBuffer(Int32): PrivateScope, Public, HideBySig
+    ReadBuffer(Int32): PrivateScope, Public, HideBySig
+    ColorMask(Boolean(HasFieldMarshal), Boolean(HasFieldMarshal), Boolean(HasFieldMarshal), Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
     LineWidth(Single): PrivateScope, Public, HideBySig
     Initial(IntPtr): PrivateScope, Public, HideBySig
     Clear(Int32): PrivateScope, Public, HideBySig

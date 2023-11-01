@@ -1109,6 +1109,15 @@ namespace NetGL {
 			Console::WriteLine("Error while loading glFramebufferRenderbuffer");
 		}
 
+		glUniform3f = (PFNGLUNIFORM3FPROC)wglGetProcAddress("glUniform3f");
+		if (glUniform3f != NULL)
+		{
+			Console::WriteLine("glUniform3f loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glUniform3f");
+		}
+
 		Console::WriteLine("ModernGL Loaded!");
 	}
 
@@ -1396,6 +1405,25 @@ namespace NetGL {
 	void NetGL::OpenGL::FramebufferRenderbuffer(int target, int attachment, int renderBufferTarget, int renderBuffer)
 	{
 		glFramebufferRenderbuffer(target, attachment, renderBufferTarget, renderBuffer);
+	}
+
+	void NetGL::OpenGL::Uniform3f(int location, float x, float y, float z) 
+	{
+		glUniform3f(location, x, y, z);
+	}
+
+	void NetGL::OpenGL::DrawBuffer(int buf) 
+	{
+		glDrawBuffer(buf);
+	}
+
+	void NetGL::OpenGL::ReadBuffer(int mode)
+	{
+		glReadBuffer(mode);
+	}
+
+	void NetGL::OpenGL::ColorMask(bool red, bool green, bool blue, bool alpha) {
+		glColorMask(red, green, blue, alpha);
 	}
 
 }

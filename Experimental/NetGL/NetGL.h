@@ -336,9 +336,8 @@ namespace NetGL {
 		static int ColorAttachment29 = GL_COLOR_ATTACHMENT29;
 		static int ColorAttachment30 = GL_COLOR_ATTACHMENT30;
 		static int ColorAttachment31 = GL_COLOR_ATTACHMENT31;
-
-
-
+		static int None = GL_NONE;
+		static int One = GL_ONE;
 
 		// GL Wrapper
 		PFNGLBINDBUFFERPROC glBindBuffer;
@@ -376,6 +375,7 @@ namespace NetGL {
 		PFNGLBINDRENDERBUFFERPROC glBindRenderbuffer;
 		PFNGLRENDERBUFFERSTORAGEPROC glRenderbufferStorage;
 		PFNGLFRAMEBUFFERRENDERBUFFERPROC glFramebufferRenderbuffer;
+		PFNGLUNIFORM3FPROC glUniform3f;
 
 		// Konstruktor
 		NetGL::OpenGL::OpenGL(void);
@@ -555,6 +555,7 @@ namespace NetGL {
 		void DeleteProgram(int program);
 		void Uniform1I(int location, int v0);
 		void Uniform1f(int location, float value);
+		void Uniform3f(int location, float x, float y, float z);
 		int GetUniformLocation(int program, String^ name);
 		void ActiveTexture(int texture);
 		array<float>^ GetFloatArray(int name, int size);
@@ -575,6 +576,9 @@ namespace NetGL {
 		void BindRenderbuffer(int target, int id);
 		void RenderbufferStorage(int target, int internalFormat, int width, int height);
 		void FramebufferRenderbuffer(int target, int attachment, int renderBufferTarget, int renderBuffer);
+		void DrawBuffer(int buf);
+		void ReadBuffer(int mode);
+		void ColorMask(bool red, bool green, bool blue, bool alpha);
 
 		// Basics
 		void LineWidth(float value);
