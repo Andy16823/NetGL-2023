@@ -1,5 +1,4 @@
 // NetGL.h
-
 #pragma once
 #include <Windows.h>
 #include <gl\GL.h>
@@ -8,13 +7,14 @@
 #include <string>
 #include "glcorearb.h"
 #include <msclr\marshal_cppstd.h>
+#include "wglext.h"
 
+#define NET_GL_VERSION "1.4"
 
 using namespace System;
 using namespace System::Collections::Generic;
 
 namespace NetGL {
-
 	public ref class OpenGL
 	{
 	public:
@@ -283,6 +283,73 @@ namespace NetGL {
 		static int Texture30 = GL_TEXTURE30;
 		static int Texture31 = GL_TEXTURE31;
 
+		static int DrawFrameBuffer = GL_DRAW_FRAMEBUFFER;
+		static int ReadFrameBuffer = GL_READ_FRAMEBUFFER;
+		static int FrameBuffer = GL_FRAMEBUFFER;
+		static int FrameBufferComplete = GL_FRAMEBUFFER_COMPLETE;
+		static int FrameBufferUndefined = GL_FRAMEBUFFER_UNDEFINED;
+		static int FrameBufferIncompleteAttachment = GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT;
+		static int FrameBufferIncompleteMissingAttachment = GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT;
+		static int FrameBufferIncompleteDrawBuffer = GL_FRAMEBUFFER_INCOMPLETE_DRAW_BUFFER;
+		static int FrameBufferIncompleteReadBuffer = GL_FRAMEBUFFER_INCOMPLETE_READ_BUFFER;
+		static int FrameBufferUnsupported = GL_FRAMEBUFFER_UNSUPPORTED;
+		static int FrameBufferIncompleteMultisample = GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE;
+		static int FrameBufferIncompleteLayerTargets = GL_FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS;
+		static int DepthAttachment = GL_DEPTH_ATTACHMENT;
+		static int StencilAttachment = GL_STENCIL_ATTACHMENT;
+		static int StencilIndex = GL_STENCIL_INDEX;
+		static int DepthStencilAttachment = GL_DEPTH_STENCIL_ATTACHMENT;
+		static int RenderBuffer = GL_RENDERBUFFER;
+		static int Depth24Stencil8 = GL_DEPTH24_STENCIL8;
+		static int DepthComponent24 = GL_DEPTH_COMPONENT24;
+		
+		static int ColorAttachment0 = GL_COLOR_ATTACHMENT0;
+		static int ColorAttachment1 = GL_COLOR_ATTACHMENT1;
+		static int ColorAttachment2 = GL_COLOR_ATTACHMENT2;
+		static int ColorAttachment3 = GL_COLOR_ATTACHMENT3;
+		static int ColorAttachment4 = GL_COLOR_ATTACHMENT4;
+		static int ColorAttachment5 = GL_COLOR_ATTACHMENT5;
+		static int ColorAttachment6 = GL_COLOR_ATTACHMENT6;
+		static int ColorAttachment7 = GL_COLOR_ATTACHMENT7;
+		static int ColorAttachment8 = GL_COLOR_ATTACHMENT8;
+		static int ColorAttachment9 = GL_COLOR_ATTACHMENT9;
+		static int ColorAttachment10 = GL_COLOR_ATTACHMENT10;
+		static int ColorAttachment11 = GL_COLOR_ATTACHMENT11;
+		static int ColorAttachment12 = GL_COLOR_ATTACHMENT12;
+		static int ColorAttachment13 = GL_COLOR_ATTACHMENT13;
+		static int ColorAttachment14 = GL_COLOR_ATTACHMENT14;
+		static int ColorAttachment15 = GL_COLOR_ATTACHMENT15;
+		static int ColorAttachment16 = GL_COLOR_ATTACHMENT16;
+		static int ColorAttachment17 = GL_COLOR_ATTACHMENT17;
+		static int ColorAttachment18 = GL_COLOR_ATTACHMENT18;
+		static int ColorAttachment19 = GL_COLOR_ATTACHMENT19;
+		static int ColorAttachment20 = GL_COLOR_ATTACHMENT20;
+		static int ColorAttachment21 = GL_COLOR_ATTACHMENT21;
+		static int ColorAttachment22 = GL_COLOR_ATTACHMENT22;
+		static int ColorAttachment23 = GL_COLOR_ATTACHMENT23;
+		static int ColorAttachment24 = GL_COLOR_ATTACHMENT24;
+		static int ColorAttachment25 = GL_COLOR_ATTACHMENT25;
+		static int ColorAttachment26 = GL_COLOR_ATTACHMENT26;
+		static int ColorAttachment27 = GL_COLOR_ATTACHMENT27;
+		static int ColorAttachment28 = GL_COLOR_ATTACHMENT28;
+		static int ColorAttachment29 = GL_COLOR_ATTACHMENT29;
+		static int ColorAttachment30 = GL_COLOR_ATTACHMENT30;
+		static int ColorAttachment31 = GL_COLOR_ATTACHMENT31;
+		static int None = GL_NONE;
+		static int One = GL_ONE;
+		static int Zero = GL_ZERO;
+		static int DstColor = GL_DST_COLOR;
+		static int DstAlpha = GL_DST_ALPHA;
+		static int SrcAlphaSaturate = GL_SRC_ALPHA_SATURATE;
+		static int OneMinusDstColor = GL_ONE_MINUS_DST_COLOR;
+		static int FuncSubtract = GL_FUNC_SUBTRACT;
+		static int FuncAdd = GL_FUNC_ADD;
+		static int FuncReverseSubtract = GL_FUNC_REVERSE_SUBTRACT;
+		static int Min = GL_MIN;
+		static int Max = GL_MAX;
+		static int FramebufferSRGB = GL_FRAMEBUFFER_SRGB;
+		static int SRBG = GL_SRGB;
+		static int SRGBAlpha = GL_SRGB_ALPHA;
 
 		// GL Wrapper
 		PFNGLBINDBUFFERPROC glBindBuffer;
@@ -293,6 +360,7 @@ namespace NetGL {
 		PFNGLBINDVERTEXARRAYPROC glBindVertexArray;
 		PFNGLENABLEVERTEXATTRIBARRAYPROC glEnableVertexAttribArray;
 		PFNGLVERTEXATTRIBPOINTERPROC glVertexAttribPointer;
+		PFNGLVERTEXATTRIBIPOINTERPROC glVertexAttribIPointer;
 		PFNGLDISABLEVERTEXATTRIBARRAYPROC glDisableVertexAttribArray;
 		PFNGLDELETEVERTEXARRAYSPROC glDeleteVertexArrays;
 		PFNGLCREATESHADERPROC glCreateShader;
@@ -308,6 +376,22 @@ namespace NetGL {
 		PFNGLGETUNIFORMLOCATIONPROC glGetUniformLocation;
 		PFNGLACTIVETEXTUREPROC glActiveTexture;
 		PFNGLUNIFORMMATRIX4FVPROC glUniformMatrix4fv;
+		PFNWGLSWAPINTERVALEXTPROC wglSwapIntervalEXT;
+		PFNGLBUFFERSUBDATAPROC glBufferSubData;
+		PFNGLUNIFORM1FPROC glUniform1f;
+		PFNGLGENERATEMIPMAPPROC glGenerateMipmap;
+		PFNGLGENFRAMEBUFFERSPROC glGenFramebuffers;
+		PFNGLBINDFRAMEBUFFERPROC glBindFramebuffer;
+		PFNGLCHECKFRAMEBUFFERSTATUSPROC glCheckFramebufferStatus;
+		PFNGLFRAMEBUFFERTEXTURE2DPROC glFramebufferTexture2D;
+		PFNGLGENRENDERBUFFERSPROC glGenRenderbuffers;
+		PFNGLBINDRENDERBUFFERPROC glBindRenderbuffer;
+		PFNGLRENDERBUFFERSTORAGEPROC glRenderbufferStorage;
+		PFNGLFRAMEBUFFERRENDERBUFFERPROC glFramebufferRenderbuffer;
+		PFNGLUNIFORM3FPROC glUniform3f;
+		PFNGLUNIFORM4FPROC glUniform4f;
+		PFNGLBLENDFUNCSEPARATEPROC glBlendFuncSeparate;
+		PFNGLBLENDEQUATIONPROC glBlendEquation;
 
 		// Konstruktor
 		NetGL::OpenGL::OpenGL(void);
@@ -429,6 +513,7 @@ namespace NetGL {
 		void BindTexture(int target, int texture);
 		void DeleteTextures(int n, int texture);
 		void TexParameteri(int target, int pname, int param);
+		void TexImage2D(int target, int level, int internalformat, int width, int height, int border, int format, int type);
 		void TexImage2D(int target, int level, int internalformat, int width, int height, int border, int format, int type, array<int>^ data);
 		void TexImage2D(int target, int level, int internalformat, int width, int height, int border, int format, int type, array<byte>^ data);
 		void TexImage2D(int target, int level, int internalformat, int width, int height, int border, int format, int type, array<short>^ data);
@@ -436,6 +521,7 @@ namespace NetGL {
 		void TexImage2D(int target, int level, int internalformat, int width, int height, int border, int format, int type, Drawing::Bitmap^ image);
 		void Build2DMipmaps(int target, int Level, int Format, int Type, Drawing::Bitmap^ Texture);
 		void BlendFunc(int sfactor, int dfactor);
+		void BlendFuncSeparate(int srcRGB, int dstRGB, int srcAlpha, int dstAlpha);
 		
 
 		// Lights
@@ -452,6 +538,10 @@ namespace NetGL {
 		void BufferData(int target, int size, array<short>^ data, int usage);
 		void BufferData(int target, int size, array<int>^ data, int usage);
 		void BufferData(int target, int size, array<double>^ data, int usage);
+		generic<typename T>
+		void BufferData(int target, int size, array<T>^ data, int usage);
+		void BufferData(int target, int size, void* data, int usage);
+		void BufferSubData(int target, int offset, int size, array<float>^ data);
 
 		// Matrix & View
 		void LookAt(float eyeX, float eyeY, float eyeZ, float centerX, float centerY, float centerZ, float upX, float upY, float upZ);
@@ -466,11 +556,15 @@ namespace NetGL {
 		int GenVertexArrays(int n);
 		void BindVertexArray(int BufferID);
 		void EnableVertexAttribArray(int BufferID);
+		void DisableVertexAttribArray(int index);
 		void VertexAttribPointer(int index, int size, int type, bool normalized, int stride, int pointer);
+		void VertexAttribPointer(int index, int size, int type, bool normalized, int stride, IntPtr pointer);
 		void VertexAttribPointer(int Index, int Size, int Type, int Normalized, int Stride, array<float>^ data);
 		void VertexAttribPointer(int Index, int Size, int Type, int Normalized, int Stride, array<short>^ data);
 		void VertexAttribPointer(int Index, int Size, int Type, int Normalized, int Stride, array<int>^ data);
 		void VertexAttribPointer(int Index, int Size, int Type, int Normalized, int Stride, array<double>^ data);
+		void VertexAtrribIPointer(int index, int size, int type, int stride, int pointer);
+		void VertexAtrribIPointer(int index, int size, int type, int stride, IntPtr pointer);
 		void DeleteVertexArrays(int n, int BufferID);
 
 		//Shaders
@@ -484,12 +578,33 @@ namespace NetGL {
 		void DeleteShader(int shader);
 		void DeleteProgram(int program);
 		void Uniform1I(int location, int v0);
+		void Uniform1f(int location, float value);
+		void Uniform3f(int location, float x, float y, float z);
+		void Uniform4f(int location, float x, float y, float z, float w);
 		int GetUniformLocation(int program, String^ name);
 		void ActiveTexture(int texture);
 		array<float>^ GetFloatArray(int name, int size);
 		void UniformMatrix4fv(int location, int count, bool transpose, array<float>^ matrixData);
 		void SetModelviewMatrix(int location, int count, bool transpose);
 		void SetProjectionMatrix(int location, int count, bool transpose);
+		void SwapIntervalEXT(int interval);
+		void GlCullFace(int mode);
+		void DepthFunc(int mode);
+		void GenerateMipMap(int target);
+
+		int GenFramebuffers(int n);
+		void BindFramebuffer(int target, int id);
+		int CheckFramebufferStatus(int target);
+		void FrameBufferTexture2D(int target, int attachment, int textarage, int texture, int level);
+		void DrawPixels(int width, int height, int format, int type);
+		int GenRenderbuffers(int n);
+		void BindRenderbuffer(int target, int id);
+		void RenderbufferStorage(int target, int internalFormat, int width, int height);
+		void FramebufferRenderbuffer(int target, int attachment, int renderBufferTarget, int renderBuffer);
+		void DrawBuffer(int buf);
+		void ReadBuffer(int mode);
+		void ColorMask(bool red, bool green, bool blue, bool alpha);
+		void BlendEquation(int mode);
 
 		// Basics
 		void LineWidth(float value);

@@ -1,0 +1,2 @@
+E:\NetGL - Kopie\NetGL\x64\Release\NetGL.vcxproj.AssemblyReference.cache
+C:\Users\Andy\Documents\NetGL - Kopie\NetGL\x64\Release\NetGL.vcxproj.AssemblyReference.cache

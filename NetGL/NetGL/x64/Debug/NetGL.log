@@ -1,10 +1,12 @@
 ﻿  NetGL.cpp
-E:\NetGL - Kopie\NetGL\glcorearb.h(63,10): warning C4067: Unerwartete Token nach Präprozessordirektive - Zeilenvorschub erwartet.
-E:\NetGL - Kopie\NetGL\NetGL.cpp(642,35): warning C4267: "return": Konvertierung von "size_t" nach "int", Datenverlust möglich
-E:\NetGL - Kopie\NetGL\NetGL.cpp(1016,78): warning C4312: "Typumwandlung": Konvertierung von "int" in größeren Typ "void *"
-E:\NetGL - Kopie\NetGL\NetGL.cpp(1088,27): warning C4244: "Argument": Konvertierung von "float" in "GLsizei", möglicher Datenverlust
-E:\NetGL - Kopie\NetGL\NetGL.cpp(1088,20): warning C4244: "Argument": Konvertierung von "float" in "GLsizei", möglicher Datenverlust
-E:\NetGL - Kopie\NetGL\NetGL.cpp(1088,17): warning C4244: "Argument": Konvertierung von "float" in "GLint", möglicher Datenverlust
-E:\NetGL - Kopie\NetGL\NetGL.cpp(1088,14): warning C4244: "Argument": Konvertierung von "float" in "GLint", möglicher Datenverlust
+C:\Users\Andy\Documents\NetGL - Kopie\NetGL\glcorearb.h(63,10): warning C4067: Unerwartete Token nach Präprozessordirektive - Zeilenvorschub erwartet.
+C:\Users\Andy\Documents\NetGL - Kopie\NetGL\NetGL.cpp(45,16): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust
+C:\Users\Andy\Documents\NetGL - Kopie\NetGL\NetGL.cpp(660,33): warning C4267: "return": Konvertierung von "size_t" nach "int", Datenverlust möglich
+C:\Users\Andy\Documents\NetGL - Kopie\NetGL\NetGL.cpp(1212,64): warning C4312: "Typumwandlung": Konvertierung von "int" in größeren Typ "void *"
+C:\Users\Andy\Documents\NetGL - Kopie\NetGL\NetGL.cpp(1263,53): warning C4312: "Typumwandlung": Konvertierung von "int" in größeren Typ "void *"
+C:\Users\Andy\Documents\NetGL - Kopie\NetGL\NetGL.cpp(1299,27): warning C4244: "Argument": Konvertierung von "float" in "GLsizei", möglicher Datenverlust
+C:\Users\Andy\Documents\NetGL - Kopie\NetGL\NetGL.cpp(1299,20): warning C4244: "Argument": Konvertierung von "float" in "GLsizei", möglicher Datenverlust
+C:\Users\Andy\Documents\NetGL - Kopie\NetGL\NetGL.cpp(1299,17): warning C4244: "Argument": Konvertierung von "float" in "GLint", möglicher Datenverlust
+C:\Users\Andy\Documents\NetGL - Kopie\NetGL\NetGL.cpp(1299,14): warning C4244: "Argument": Konvertierung von "float" in "GLint", möglicher Datenverlust
   AssemblyInfo.obj : MSIL-Modulgefunden; inkrementelles Verknüpfen wird für MSIL deaktiviert; vollständiger Link wird durchgeführt
-  NetGL.vcxproj -> E:\NetGL - Kopie\x64\Debug\NetGL.dll
+  NetGL.vcxproj -> C:\Users\Andy\Documents\NetGL - Kopie\x64\Debug\NetGL.dll

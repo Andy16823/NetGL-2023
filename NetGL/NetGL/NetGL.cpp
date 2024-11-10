@@ -35,14 +35,27 @@ namespace NetGL {
 
 		Console::WriteLine(GetLastError().ToString());
 
+		// Initial Extentions
+		if (this->modernGL) {
+			InitialExt();
+		}
+
+		std::string strVersion = (const char*)glGetString(GL_VERSION);
+		strVersion = strVersion.substr(0, strVersion.find(" "));
+		float number = std::atof(strVersion.c_str());
+		Console::WriteLine("Using GL " + number);
+
 		// Sets the Graphic Device
 		this->ContexArray = new std::vector<HGLRC>();
 		this->GraphicDevice = hWnd;
 		this->ContexArray->push_back(hrc);
 
-		// Initial Extentions
-		if (this->modernGL) {
-			InitialExt();
+		auto error = glGetError();
+		if (error != 0) {
+			Console::WriteLine("Error after init " + error);
+		}
+		else {
+			Console::WriteLine("NetGL " + NET_GL_VERSION + " Initalized!");
 		}
 	}
 
@@ -269,6 +282,11 @@ namespace NetGL {
 	int NetGL::OpenGL::GetError()
 	{
 		return glGetError();
+	}
+
+	void NetGL::OpenGL::TexImage2D(int target, int level, int internalformat, int width, int height, int border, int format, int type)
+	{
+		glTexImage2D(target, level, internalformat, width, height, border, format, type, NULL);
 	}
 
 	void NetGL::OpenGL::TexImage2D(int target, int level, int internalformat, int width, int height, int border, int format, int type, array<int>^ data)
@@ -769,6 +787,29 @@ namespace NetGL {
 		glBufferData(target, size, pdata, usage);
 	}
 
+	generic<typename T>
+	void NetGL::OpenGL::BufferData(int target, int size, array<T>^ data, int usage)
+	{
+		/*GLfloat* arr = new GLfloat[data->Length];
+		for (int i = 0; i < data->Length; i++)
+		{
+			arr[i] = data[i];
+		}*/
+		pin_ptr<T> pinnedArray = &data[0];
+		glBufferData(target, size, pinnedArray, usage);
+	}
+
+	void NetGL::OpenGL::BufferData(int target, int size, void* data, int usage)
+	{
+		glBufferData(target, size, data, usage);
+	}
+
+	void NetGL::OpenGL::BufferSubData(int target, int offset, int size, array<float>^ data) 
+	{
+		pin_ptr<float> pdata = &data[0];
+		glBufferSubData(target, offset, size, pdata);
+	}
+
 	void NetGL::OpenGL::InitialExt()
 	{
 		// Modern GL
@@ -850,6 +891,15 @@ namespace NetGL {
 		else
 		{
 			Console::WriteLine(false);
+		}
+
+		glVertexAttribIPointer = (PFNGLVERTEXATTRIBIPOINTERPROC)wglGetProcAddress("glVertexAttribIPointer");
+		if (glVertexAttribIPointer != NULL)
+		{
+			Console::WriteLine("glVertexAttribIPointer init");
+		}
+		else {
+			Console::WriteLine("Could not load glVertexAttribIPointer");
 		}
 
 		glDisableVertexAttribArray = (PFNGLDISABLEVERTEXATTRIBARRAYPROC)wglGetProcAddress("glDisableVertexAttribArray");
@@ -990,6 +1040,147 @@ namespace NetGL {
 			Console::WriteLine("Error while loading glUniformMatrix4fv");
 		}
 
+		wglSwapIntervalEXT = (PFNWGLSWAPINTERVALEXTPROC)wglGetProcAddress("wglSwapIntervalEXT");
+		if (wglSwapIntervalEXT != NULL)
+		{
+			Console::WriteLine("wglSwapIntervalEXT loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading wglSwapIntervalEXT");
+		}
+
+		glBufferSubData = (PFNGLBUFFERSUBDATAPROC)wglGetProcAddress("glBufferSubData");
+		if (glBufferSubData != NULL)
+		{
+			Console::WriteLine("glBufferSubData loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glBufferSubData");
+		}
+
+		glUniform1f = (PFNGLUNIFORM1FPROC)wglGetProcAddress("glUniform1f");
+		if (glUniform1f != NULL)
+		{
+			Console::WriteLine("glUniform1f loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glUniform1f");
+		}
+
+		glGenerateMipmap = (PFNGLGENERATEMIPMAPPROC)wglGetProcAddress("glGenerateMipmap");
+		if (glGenerateMipmap != NULL)
+		{
+			Console::WriteLine("glGenerateMipmap loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glGenerateMipmap");
+		}
+
+		glGenFramebuffers = (PFNGLGENFRAMEBUFFERSPROC)wglGetProcAddress("glGenFramebuffers");
+		if (glGenFramebuffers != NULL)
+		{
+			Console::WriteLine("glGenFramebuffers loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glGenFramebuffers");
+		}
+
+		glBindFramebuffer = (PFNGLBINDFRAMEBUFFERPROC)wglGetProcAddress("glBindFramebuffer");
+		if (glBindFramebuffer != NULL)
+		{
+			Console::WriteLine("glBindFramebuffer loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glBindFramebuffer");
+		}
+
+		glCheckFramebufferStatus = (PFNGLCHECKFRAMEBUFFERSTATUSPROC)wglGetProcAddress("glCheckFramebufferStatus");
+		if (glCheckFramebufferStatus != NULL)
+		{
+			Console::WriteLine("glCheckFramebufferStatus loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glCheckFramebufferStatus");
+		}
+
+		glFramebufferTexture2D = (PFNGLFRAMEBUFFERTEXTURE2DPROC)wglGetProcAddress("glFramebufferTexture2D");
+		if (glFramebufferTexture2D != NULL)
+		{
+			Console::WriteLine("glFramebufferTexture2D loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glFramebufferTexture2D");
+		}
+
+		glGenRenderbuffers = (PFNGLGENRENDERBUFFERSPROC)wglGetProcAddress("glGenRenderbuffers");
+		if (glGenRenderbuffers != NULL)
+		{
+			Console::WriteLine("glGenRenderbuffers loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glGenRenderbuffers");
+		}
+
+		glBindRenderbuffer = (PFNGLBINDRENDERBUFFERPROC)wglGetProcAddress("glBindRenderbuffer");
+		if (glBindRenderbuffer != NULL)
+		{
+			Console::WriteLine("glBindRenderbuffer loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glBindRenderbuffer");
+		}
+
+		glRenderbufferStorage = (PFNGLRENDERBUFFERSTORAGEPROC)wglGetProcAddress("glRenderbufferStorage");
+		if (glRenderbufferStorage != NULL)
+		{
+			Console::WriteLine("glRenderbufferStorage loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glRenderbufferStorage");
+		}
+
+		glFramebufferRenderbuffer = (PFNGLFRAMEBUFFERRENDERBUFFERPROC)wglGetProcAddress("glFramebufferRenderbuffer");
+		if (glFramebufferRenderbuffer != NULL)
+		{
+			Console::WriteLine("glFramebufferRenderbuffer loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glFramebufferRenderbuffer");
+		}
+
+		glUniform3f = (PFNGLUNIFORM3FPROC)wglGetProcAddress("glUniform3f");
+		if (glUniform3f != NULL)
+		{
+			Console::WriteLine("glUniform3f loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glUniform3f");
+		}
+
+		glUniform4f = (PFNGLUNIFORM4FPROC)wglGetProcAddress("glUniform4f");
+		if (glUniform4f != NULL) {
+			Console::WriteLine("glUniform4f loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glUniform4f");
+		}
+
+		glBlendFuncSeparate = (PFNGLBLENDFUNCSEPARATEPROC)wglGetProcAddress("glBlendFuncSeparate");
+		if (glBlendFuncSeparate != NULL) {
+			Console::WriteLine("glBlendFuncSeparate loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glBlendFuncSeparate");
+		}
+
+		glBlendEquation = (PFNGLBLENDEQUATIONPROC)wglGetProcAddress("glBlendEquation");
+		if (glBlendEquation != NULL) {
+			Console::WriteLine("glBlendEquation loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glBlendEquation");
+		}
+
 		Console::WriteLine("ModernGL Loaded!");
 	}
 
@@ -1011,7 +1202,17 @@ namespace NetGL {
 		glEnableVertexAttribArray(BufferID);
 	}
 
+	void NetGL::OpenGL::DisableVertexAttribArray(int index)
+	{
+		glDisableVertexAttribArray(index);
+	}
+
 	void NetGL::OpenGL::VertexAttribPointer(int index, int size, int type, bool normalized, int stride, int pointer)
+	{
+		glVertexAttribPointer(index, size, type, normalized, stride, (void*)pointer);
+	}
+
+	void NetGL::OpenGL::VertexAttribPointer(int index, int size, int type, bool normalized, int stride, IntPtr pointer)
 	{
 		glVertexAttribPointer(index, size, type, normalized, stride, (void*)pointer);
 	}
@@ -1057,6 +1258,16 @@ namespace NetGL {
 		glVertexAttribPointer(Index, Size, Type, Normalized, Stride, arr);
 	}
 
+	void NetGL::OpenGL::VertexAtrribIPointer(int index, int size, int type, int stride, int pointer)
+	{
+		glVertexAttribIPointer(index, size, type, stride, (void*) pointer);
+	}
+
+	void NetGL::OpenGL::VertexAtrribIPointer(int index, int size, int type, int stride, IntPtr pointer)
+	{
+		glVertexAttribIPointer(index, size, type, stride, (void*)pointer);
+	}
+
 	void NetGL::OpenGL::DeleteVertexArrays(int n, int BufferID)
 	{
 		const GLuint i = BufferID;
@@ -1099,6 +1310,11 @@ namespace NetGL {
 	void NetGL::OpenGL::BlendFunc(int sfactor, int dfactor) {
 		glBlendFunc(sfactor, dfactor);
 
+	}
+
+	void NetGL::OpenGL::BlendFuncSeparate(int srcRGB, int dstRGB, int srcAlpha, int dstAlpha)
+	{
+		glBlendFuncSeparate(srcRGB, dstRGB, srcAlpha, dstAlpha);
 	}
 
 	void NetGL::OpenGL::LineWidth(float width) {
@@ -1160,6 +1376,10 @@ namespace NetGL {
 		glUniform1i(location, v0);
 	}
 
+	void NetGL::OpenGL::Uniform1f(int location, float value) {
+		glUniform1f(location, value);
+	}
+
 	int NetGL::OpenGL::GetUniformLocation(int program, String^ name)
 	{
 		const char* cname = (const char*)(System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi(name)).ToPointer();
@@ -1207,4 +1427,101 @@ namespace NetGL {
 		glUniformMatrix4fv(location, count, transpose, result);
 		delete[] result;
 	}
+
+	void NetGL::OpenGL::SwapIntervalEXT(int interval) 
+	{
+		wglSwapIntervalEXT(interval);
+	}
+
+	void NetGL::OpenGL::GlCullFace(int mode) 
+	{
+		glCullFace(mode);
+	}
+
+	void NetGL::OpenGL::DepthFunc(int mode) 
+	{
+		glDepthFunc(mode);
+	}
+
+	void NetGL::OpenGL::GenerateMipMap(int target) 
+	{
+		glGenerateMipmap(target);
+	}
+
+	int NetGL::OpenGL::GenFramebuffers(int n) 
+	{
+		GLuint ID;
+		glGenFramebuffers(n, &ID);
+		return (int)ID;
+	}
+
+	void NetGL::OpenGL::BindFramebuffer(int target, int id)
+	{
+		glBindFramebuffer(target, id);
+	}
+
+	int NetGL::OpenGL::CheckFramebufferStatus(int target) {
+		return glCheckFramebufferStatus(target);
+	}
+
+	void NetGL::OpenGL::FrameBufferTexture2D(int target, int attachment, int textarage, int texture, int level)
+	{
+		glFramebufferTexture2D(target, attachment, textarage, texture, level);
+	}
+
+	void NetGL::OpenGL::DrawPixels(int width, int height, int format, int type)
+	{
+		glDrawPixels(width, height, format, type, nullptr);
+	}
+
+	int NetGL::OpenGL::GenRenderbuffers(int n)
+	{
+		GLuint ID;
+		glGenRenderbuffers(n, &ID);
+		return (int)ID;
+	}
+	void NetGL::OpenGL::BindRenderbuffer(int target, int id)
+	{
+		glBindRenderbuffer(target, id);
+	}
+
+	void NetGL::OpenGL::RenderbufferStorage(int target, int internalFormat, int width, int height)
+	{
+		glRenderbufferStorage(target, internalFormat, width, height);
+	}
+	
+	void NetGL::OpenGL::FramebufferRenderbuffer(int target, int attachment, int renderBufferTarget, int renderBuffer)
+	{
+		glFramebufferRenderbuffer(target, attachment, renderBufferTarget, renderBuffer);
+	}
+
+	void NetGL::OpenGL::Uniform3f(int location, float x, float y, float z) 
+	{
+		glUniform3f(location, x, y, z);
+	}
+
+	void OpenGL::Uniform4f(int location, float x, float y, float z, float w)
+	{
+		glUniform4f(location, x, y, z, w);
+	}
+
+	void NetGL::OpenGL::DrawBuffer(int buf) 
+	{
+		glDrawBuffer(buf);
+	}
+
+	void NetGL::OpenGL::ReadBuffer(int mode)
+	{
+		glReadBuffer(mode);
+	}
+
+	void NetGL::OpenGL::ColorMask(bool red, bool green, bool blue, bool alpha) {
+		glColorMask(red, green, blue, alpha);
+	}
+
+	void OpenGL::BlendEquation(int mode)
+	{
+		glBlendEquation(mode);
+	}
+
 }
