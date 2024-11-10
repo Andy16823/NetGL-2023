@@ -1,4 +1,0 @@
-C:\Users\Benutzer 1\source\repos\NetGL\NetGL\x64\Debug\NetGL.vcxproj.AssemblyReference.cache
-E:\NetGL\NetGL\x64\Debug\NetGL.vcxproj.AssemblyReference.cache
-F:\NetGL\NetGL\x64\Debug\NetGL.vcxproj.AssemblyReference.cache
-E:\NetGL - Kopie\NetGL\x64\Debug\NetGL.vcxproj.AssemblyReference.cache
