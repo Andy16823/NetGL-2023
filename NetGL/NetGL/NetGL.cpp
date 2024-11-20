@@ -715,6 +715,11 @@ namespace NetGL {
 		glDrawArrays(mode, first, count);
 	}
 
+	void OpenGL::DrawArraysInstanced(int mode, int first, int count, int instancecount)
+	{
+		glDrawArraysInstanced(mode, first, count, instancecount);
+	}
+
 	void NetGL::OpenGL::NormalPointer(int Type, int Stride, array<float>^ data)
 	{
 		GLfloat* arr = new GLfloat[data->Length];
@@ -1181,6 +1186,22 @@ namespace NetGL {
 			Console::WriteLine("Error while loading glBlendEquation");
 		}
 
+		glVertexAttribDivisor = (PFNGLVERTEXATTRIBDIVISORPROC)wglGetProcAddress("glVertexAttribDivisor");
+		if (glVertexAttribDivisor != NULL) {
+			Console::WriteLine("glVertexAttribDivisor loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glVertexAttribDivisor");
+		}
+
+		glDrawArraysInstanced = (PFNGLDRAWARRAYSINSTANCEDPROC)wglGetProcAddress("glDrawArraysInstanced");
+		if (glDrawArraysInstanced != NULL) {
+			Console::WriteLine("glDrawArraysInstanced loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glDrawArraysInstanced");
+		}
+
 		Console::WriteLine("ModernGL Loaded!");
 	}
 
@@ -1272,6 +1293,11 @@ namespace NetGL {
 	{
 		const GLuint i = BufferID;
 		glDeleteVertexArrays(n, &i);
+	}
+
+	void OpenGL::VertexAttribDivisor(int index, int divisor)
+	{
+		glVertexAttribDivisor(index, divisor);
 	}
 
 	void NetGL::OpenGL::LookAt(float eyeX, float eyeY, float eyeZ, float centerX, float centerY, float centerZ, float upX, float upY, float upZ) 

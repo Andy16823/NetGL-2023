@@ -9,7 +9,7 @@
 #include <msclr\marshal_cppstd.h>
 #include "wglext.h"
 
-#define NET_GL_VERSION "1.4"
+#define NET_GL_VERSION "1.5"
 
 using namespace System;
 using namespace System::Collections::Generic;
@@ -392,6 +392,8 @@ namespace NetGL {
 		PFNGLUNIFORM4FPROC glUniform4f;
 		PFNGLBLENDFUNCSEPARATEPROC glBlendFuncSeparate;
 		PFNGLBLENDEQUATIONPROC glBlendEquation;
+		PFNGLVERTEXATTRIBDIVISORPROC glVertexAttribDivisor;
+		PFNGLDRAWARRAYSINSTANCEDPROC glDrawArraysInstanced;
 
 		// Konstruktor
 		NetGL::OpenGL::OpenGL(void);
@@ -500,6 +502,7 @@ namespace NetGL {
 		void DrawElements(int Mode, int Count, int ElementType, List<int>^ List);
 		void DrawElements(int Mode, int Count, int ElementType);
 		void DrawArrays(int mode, int first, int count);
+		void DrawArraysInstanced(int mode, int first, int count, int instancecount);
 
 		// Enable & Disable
 		void EnabledClientState(int mode);
@@ -566,6 +569,7 @@ namespace NetGL {
 		void VertexAtrribIPointer(int index, int size, int type, int stride, int pointer);
 		void VertexAtrribIPointer(int index, int size, int type, int stride, IntPtr pointer);
 		void DeleteVertexArrays(int n, int BufferID);
+		void VertexAttribDivisor(int index, int divisor);
 
 		//Shaders
 		int CreateShader(int type);

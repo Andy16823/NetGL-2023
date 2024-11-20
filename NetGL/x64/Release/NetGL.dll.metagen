@@ -54,6 +54,8 @@ Class NetGL.OpenGL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     IntPtr glUniform4f : Public
     IntPtr glBlendFuncSeparate : Public
     IntPtr glBlendEquation : Public
+    IntPtr glVertexAttribDivisor : Public
+    IntPtr glDrawArraysInstanced : Public
     Boolean modernGL : Public
     Int32 DepthBufferBit : Public, Static
     Int32 ColorBufferBit : Public, Static
@@ -377,6 +379,7 @@ Class NetGL.OpenGL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Int32 SRBG : Public, Static
     Int32 SRGBAlpha : Public, Static
   Methods:
+    Perspective(Single, Single, Single, Single): PrivateScope, Public, HideBySig
     Frustum(Single, Single, Single, Single, Single, Single): PrivateScope, Public, HideBySig
     Ortho(Single, Single, Single, Single, Single, Single): PrivateScope, Public, HideBySig
     Viewport(Single, Single, Single, Single): PrivateScope, Public, HideBySig
@@ -395,6 +398,7 @@ Class NetGL.OpenGL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     VertexAtrribIPointer(Int32, Int32, Int32, Int32, IntPtr): PrivateScope, Public, HideBySig
     VertexAtrribIPointer(Int32, Int32, Int32, Int32, Int32): PrivateScope, Public, HideBySig
     DeleteVertexArrays(Int32, Int32): PrivateScope, Public, HideBySig
+    VertexAttribDivisor(Int32, Int32): PrivateScope, Public, HideBySig
     CreateShader(Int32): PrivateScope, Public, HideBySig
     SetShaderSource(Int32, Int32, String): PrivateScope, Public, HideBySig
     CompileShader(Int32): PrivateScope, Public, HideBySig
@@ -524,6 +528,7 @@ Class NetGL.OpenGL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     DrawElements(Int32, Int32, Int32, Int16[]): PrivateScope, Public, HideBySig
     DrawElements(Int32, Int32, Int32, Byte[]): PrivateScope, Public, HideBySig
     DrawArrays(Int32, Int32, Int32): PrivateScope, Public, HideBySig
+    DrawArraysInstanced(Int32, Int32, Int32, Int32): PrivateScope, Public, HideBySig
     EnabledClientState(Int32): PrivateScope, Public, HideBySig
     DisableClientState(Int32): PrivateScope, Public, HideBySig
     Enable(Int32): PrivateScope, Public, HideBySig
@@ -557,7 +562,6 @@ Class NetGL.OpenGL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     BufferData(Int32, Int32, Single[], Int32): PrivateScope, Public, HideBySig
     BufferSubData(Int32, Int32, Int32, Single[]): PrivateScope, Public, HideBySig
     LookAt(Single, Single, Single, Single, Single, Single, Single, Single, Single): PrivateScope, Public, HideBySig
-    Perspective(Single, Single, Single, Single): PrivateScope, Public, HideBySig
 Class NetGL.Toolkit.TextureImporter: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(System.Drawing.Bitmap): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
