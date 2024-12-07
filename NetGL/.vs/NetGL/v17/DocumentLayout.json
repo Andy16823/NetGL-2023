@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Andy\\Documents\\NetGL - Kopie\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{895416BD-94F5-45E9-9E4F-36B7E4B76889}|NetGL\\NetGL.vcxproj|C:\\Users\\Andy\\Documents\\NetGL - Kopie\\NetGL\\NetGL.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{895416BD-94F5-45E9-9E4F-36B7E4B76889}|NetGL\\NetGL.vcxproj|solutionrelative:NetGL\\NetGL.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{895416BD-94F5-45E9-9E4F-36B7E4B76889}|NetGL\\NetGL.vcxproj|C:\\Users\\Andy\\Documents\\NetGL - Kopie\\NetGL\\NetGL.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{895416BD-94F5-45E9-9E4F-36B7E4B76889}|NetGL\\NetGL.vcxproj|solutionrelative:NetGL\\NetGL.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{895416BD-94F5-45E9-9E4F-36B7E4B76889}|NetGL\\NetGL.vcxproj|C:\\Users\\Andy\\Documents\\NetGL - Kopie\\NetGL\\NetGL.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{895416BD-94F5-45E9-9E4F-36B7E4B76889}|NetGL\\NetGL.vcxproj|solutionrelative:NetGL\\NetGL.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{895416BD-94F5-45E9-9E4F-36B7E4B76889}|NetGL\\NetGL.vcxproj|C:\\Users\\Andy\\Documents\\NetGL - Kopie\\NetGL\\pch.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -38,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,16 +58,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "NetGL.cpp",
               "DocumentMoniker": "C:\\Users\\Andy\\Documents\\NetGL - Kopie\\NetGL\\NetGL.cpp",
               "RelativeDocumentMoniker": "NetGL\\NetGL.cpp",
               "ToolTip": "C:\\Users\\Andy\\Documents\\NetGL - Kopie\\NetGL\\NetGL.cpp",
               "RelativeToolTip": "NetGL\\NetGL.cpp",
-              "ViewState": "AQIAALoCAAAAAAAAAAAjwM8CAAA7AAAA",
+              "ViewState": "AQIAAAcBAAAAAAAAAAAjwBQBAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-10T03:10:57.139Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-10T03:10:57.139Z"
             },
             {
               "$type": "Document",
@@ -83,13 +82,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "NetGL.h",
               "DocumentMoniker": "C:\\Users\\Andy\\Documents\\NetGL - Kopie\\NetGL\\NetGL.h",
               "RelativeDocumentMoniker": "NetGL\\NetGL.h",
               "ToolTip": "C:\\Users\\Andy\\Documents\\NetGL - Kopie\\NetGL\\NetGL.h",
               "RelativeToolTip": "NetGL\\NetGL.h",
-              "ViewState": "AQIAAOQBAAAAAAAAAAAjwPgBAAARAAAA",
+              "ViewState": "AQIAAFMBAAAAAAAAAAAAAGMBAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-11-10T03:10:57.203Z",
               "EditorCaption": ""

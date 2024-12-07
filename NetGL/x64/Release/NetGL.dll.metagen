@@ -56,6 +56,8 @@ Class NetGL.OpenGL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     IntPtr glBlendEquation : Public
     IntPtr glVertexAttribDivisor : Public
     IntPtr glDrawArraysInstanced : Public
+    IntPtr glDeleteFramebuffers : Public
+    IntPtr glDeleteRenderbuffers : Public
     Boolean modernGL : Public
     Int32 DepthBufferBit : Public, Static
     Int32 ColorBufferBit : Public, Static
@@ -378,7 +380,12 @@ Class NetGL.OpenGL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Int32 FramebufferSRGB : Public, Static
     Int32 SRBG : Public, Static
     Int32 SRGBAlpha : Public, Static
+    Int32 ClampToBorder : Public, Static
+    Int32 TextureBorderColor : Public, Static
+    Int32 Front : Public, Static
+    Int32 Back : Public, Static
   Methods:
+    LookAt(Single, Single, Single, Single, Single, Single, Single, Single, Single): PrivateScope, Public, HideBySig
     Perspective(Single, Single, Single, Single): PrivateScope, Public, HideBySig
     Frustum(Single, Single, Single, Single, Single, Single): PrivateScope, Public, HideBySig
     Ortho(Single, Single, Single, Single, Single, Single): PrivateScope, Public, HideBySig
@@ -433,6 +440,8 @@ Class NetGL.OpenGL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     FramebufferRenderbuffer(Int32, Int32, Int32, Int32): PrivateScope, Public, HideBySig
     DrawBuffer(Int32): PrivateScope, Public, HideBySig
     ReadBuffer(Int32): PrivateScope, Public, HideBySig
+    DeleteFramebuffers(Int32, Int32): PrivateScope, Public, HideBySig
+    DeleteRenderbuffers(Int32, Int32): PrivateScope, Public, HideBySig
     ColorMask(Boolean(HasFieldMarshal), Boolean(HasFieldMarshal), Boolean(HasFieldMarshal), Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
     BlendEquation(Int32): PrivateScope, Public, HideBySig
     LineWidth(Single): PrivateScope, Public, HideBySig
@@ -538,6 +547,7 @@ Class NetGL.OpenGL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     BindTexture(Int32, Int32): PrivateScope, Public, HideBySig
     DeleteTextures(Int32, Int32): PrivateScope, Public, HideBySig
     TexParameteri(Int32, Int32, Int32): PrivateScope, Public, HideBySig
+    TexParameterfv(Int32, Int32, Single[]): PrivateScope, Public, HideBySig
     TexImage2D(Int32, Int32, Int32, Int32, Int32, Int32, Int32, Int32, Bitmap): PrivateScope, Public, HideBySig
     TexImage2D(Int32, Int32, Int32, Int32, Int32, Int32, Int32, Int32, Single[]): PrivateScope, Public, HideBySig
     TexImage2D(Int32, Int32, Int32, Int32, Int32, Int32, Int32, Int32, Int16[]): PrivateScope, Public, HideBySig
@@ -561,7 +571,6 @@ Class NetGL.OpenGL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     BufferData(Int32, Int32, Int16[], Int32): PrivateScope, Public, HideBySig
     BufferData(Int32, Int32, Single[], Int32): PrivateScope, Public, HideBySig
     BufferSubData(Int32, Int32, Int32, Single[]): PrivateScope, Public, HideBySig
-    LookAt(Single, Single, Single, Single, Single, Single, Single, Single, Single): PrivateScope, Public, HideBySig
 Class NetGL.Toolkit.TextureImporter: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(System.Drawing.Bitmap): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

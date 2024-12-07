@@ -271,6 +271,12 @@ namespace NetGL {
 		glTexParameteri(target, pname, param);
 	}
 
+	void OpenGL::TexParameterfv(int target, int pname, array<float>^ data)
+	{
+		pin_ptr<float> pinnedData = &data[0];
+		glTexParameterfv(target, pname, pinnedData);
+	}
+
 	void NetGL::OpenGL::Build2DMipmaps(int target, int level, int format, int type, Drawing::Bitmap^ Texture)
 	{
 		Drawing::Rectangle rect(0, 0, Texture->Width, Texture->Height);
@@ -1202,6 +1208,22 @@ namespace NetGL {
 			Console::WriteLine("Error while loading glDrawArraysInstanced");
 		}
 
+		glDeleteFramebuffers = (PFNGLDELETEFRAMEBUFFERSPROC)wglGetProcAddress("glDeleteFramebuffers");
+		if (glDeleteFramebuffers != NULL) {
+			Console::WriteLine("glDeleteFramebuffers loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glDeleteFramebuffers");
+		}
+
+		glDeleteRenderbuffers = (PFNGLDELETERENDERBUFFERSPROC)wglGetProcAddress("glDeleteRenderbuffers");
+		if (glDeleteRenderbuffers != NULL) {
+			Console::WriteLine("glDeleteRenderbuffers loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glDeleteRenderbuffers");
+		}
+
 		Console::WriteLine("ModernGL Loaded!");
 	}
 
@@ -1539,6 +1561,18 @@ namespace NetGL {
 	void NetGL::OpenGL::ReadBuffer(int mode)
 	{
 		glReadBuffer(mode);
+	}
+
+	void OpenGL::DeleteFramebuffers(int n, int buffer)
+	{
+		const GLuint gl_buffer = buffer;
+		glDeleteBuffers(n, &gl_buffer);
+	}
+
+	void OpenGL::DeleteRenderbuffers(int n, int buffer)
+	{
+		const GLuint gl_buffer = buffer;
+		glDeleteFramebuffers(n, &gl_buffer);
 	}
 
 	void NetGL::OpenGL::ColorMask(bool red, bool green, bool blue, bool alpha) {

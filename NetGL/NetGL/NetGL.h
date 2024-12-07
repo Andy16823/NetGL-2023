@@ -9,7 +9,7 @@
 #include <msclr\marshal_cppstd.h>
 #include "wglext.h"
 
-#define NET_GL_VERSION "1.5"
+#define NET_GL_VERSION "1.6.5"
 
 using namespace System;
 using namespace System::Collections::Generic;
@@ -350,6 +350,10 @@ namespace NetGL {
 		static int FramebufferSRGB = GL_FRAMEBUFFER_SRGB;
 		static int SRBG = GL_SRGB;
 		static int SRGBAlpha = GL_SRGB_ALPHA;
+		static int ClampToBorder = GL_CLAMP_TO_BORDER;
+		static int TextureBorderColor = GL_TEXTURE_BORDER_COLOR;
+		static int Front = GL_FRONT;
+		static int Back = GL_BACK;
 
 		// GL Wrapper
 		PFNGLBINDBUFFERPROC glBindBuffer;
@@ -394,6 +398,8 @@ namespace NetGL {
 		PFNGLBLENDEQUATIONPROC glBlendEquation;
 		PFNGLVERTEXATTRIBDIVISORPROC glVertexAttribDivisor;
 		PFNGLDRAWARRAYSINSTANCEDPROC glDrawArraysInstanced;
+		PFNGLDELETEFRAMEBUFFERSPROC glDeleteFramebuffers;
+		PFNGLDELETERENDERBUFFERSPROC glDeleteRenderbuffers;
 
 		// Konstruktor
 		NetGL::OpenGL::OpenGL(void);
@@ -516,6 +522,7 @@ namespace NetGL {
 		void BindTexture(int target, int texture);
 		void DeleteTextures(int n, int texture);
 		void TexParameteri(int target, int pname, int param);
+		void TexParameterfv(int target, int pname, array<float>^ data);
 		void TexImage2D(int target, int level, int internalformat, int width, int height, int border, int format, int type);
 		void TexImage2D(int target, int level, int internalformat, int width, int height, int border, int format, int type, array<int>^ data);
 		void TexImage2D(int target, int level, int internalformat, int width, int height, int border, int format, int type, array<byte>^ data);
@@ -607,6 +614,8 @@ namespace NetGL {
 		void FramebufferRenderbuffer(int target, int attachment, int renderBufferTarget, int renderBuffer);
 		void DrawBuffer(int buf);
 		void ReadBuffer(int mode);
+		void DeleteFramebuffers(int n, int buffer);
+		void DeleteRenderbuffers(int n, int buffer);
 		void ColorMask(bool red, bool green, bool blue, bool alpha);
 		void BlendEquation(int mode);
 
