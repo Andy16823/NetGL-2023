@@ -1229,12 +1229,12 @@ namespace NetGL {
 			Console::WriteLine("Error while loading glDeleteRenderbuffers");
 		}
 
-		glDrawArraysInstanced = (PFNGLDRAWARRAYSINSTANCEDPROC)wglGetProcAddress("glDrawArraysInstanced");
-		if (glDrawArraysInstanced != NULL) {
-			Console::WriteLine("glDrawArraysInstanced loaded");
+		glDrawElementsInstanced = (PFNGLDRAWELEMENTSINSTANCEDPROC)wglGetProcAddress("glDrawElementsInstanced");
+		if (glDrawElementsInstanced != NULL) {
+			Console::WriteLine("glDrawElementsInstanced loaded");
 		}
 		else {
-			Console::WriteLine("Error while loading glDrawArraysInstanced");
+			Console::WriteLine("Error while loading glDrawElementsInstanced");
 		}
 
 		Console::WriteLine("ModernGL Loaded!");

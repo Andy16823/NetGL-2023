@@ -1,6 +1,4 @@
-﻿  pch.cpp
-  AssemblyInfo.cpp
-  NetGL.cpp
+﻿  NetGL.cpp
 C:\Users\andy1\Documents\GitHub\NetGL-2023\NetGL\NetGL\glcorearb.h(63,10): warning C4067: Unerwartete Token nach Präprozessordirektive - Zeilenvorschub erwartet.
   (Quelldatei „/NetGL.cpp“ wird kompiliert)
   
@@ -28,17 +26,5 @@ C:\Users\andy1\Documents\GitHub\NetGL-2023\NetGL\NetGL\NetGL.cpp(1360,17): warni
 C:\Users\andy1\Documents\GitHub\NetGL-2023\NetGL\NetGL\NetGL.cpp(1360,14): warning C4244: "Argument": Konvertierung von "float" in "GLint", möglicher Datenverlust
   (Quelldatei „/NetGL.cpp“ wird kompiliert)
   
-  TextureImporter.cpp
-C:\Users\andy1\Documents\GitHub\NetGL-2023\NetGL\NetGL\glcorearb.h(63,10): warning C4067: Unerwartete Token nach Präprozessordirektive - Zeilenvorschub erwartet.
-  (Quelldatei „/TextureImporter.cpp“ wird kompiliert)
-  
-C:\Users\andy1\Documents\GitHub\NetGL-2023\NetGL\NetGL\TextureImporter.cpp(20,40): warning C4305: "Argument": Verkürzung von "double" in "float"
-  (Quelldatei „/TextureImporter.cpp“ wird kompiliert)
-  
-C:\Users\andy1\Documents\GitHub\NetGL-2023\NetGL\NetGL\TextureImporter.cpp(38,40): warning C4305: "Argument": Verkürzung von "double" in "float"
-  (Quelldatei „/TextureImporter.cpp“ wird kompiliert)
-  
-  Code wird generiert...
-  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
   AssemblyInfo.obj : MSIL-Modulgefunden; inkrementelles Verknüpfen wird für MSIL deaktiviert; vollständiger Link wird durchgeführt
   NetGL.vcxproj -> C:\Users\andy1\Documents\GitHub\NetGL-2023\NetGL\x64\Debug\NetGL.dll
