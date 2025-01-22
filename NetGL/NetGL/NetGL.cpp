@@ -238,6 +238,11 @@ namespace NetGL {
 		glDrawElements(Mode, Size, ElementType, NULL);
 	}
 
+	void OpenGL::DrawElementsInstanced(int Mode, int Count, int ElementType, IntPtr Indices, int InstanceCount)
+	{
+		glDrawElementsInstanced(Mode, Count, ElementType, (void*)Indices, InstanceCount);
+	}
+
 	void NetGL::OpenGL::Enable(int Flag)
 	{
 		glEnable(Flag);
@@ -1222,6 +1227,14 @@ namespace NetGL {
 		}
 		else {
 			Console::WriteLine("Error while loading glDeleteRenderbuffers");
+		}
+
+		glDrawArraysInstanced = (PFNGLDRAWARRAYSINSTANCEDPROC)wglGetProcAddress("glDrawArraysInstanced");
+		if (glDrawArraysInstanced != NULL) {
+			Console::WriteLine("glDrawArraysInstanced loaded");
+		}
+		else {
+			Console::WriteLine("Error while loading glDrawArraysInstanced");
 		}
 
 		Console::WriteLine("ModernGL Loaded!");

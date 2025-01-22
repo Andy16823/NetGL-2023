@@ -9,7 +9,7 @@
 #include <msclr\marshal_cppstd.h>
 #include "wglext.h"
 
-#define NET_GL_VERSION "1.6.5"
+#define NET_GL_VERSION "1.6.6"
 
 using namespace System;
 using namespace System::Collections::Generic;
@@ -400,6 +400,7 @@ namespace NetGL {
 		PFNGLDRAWARRAYSINSTANCEDPROC glDrawArraysInstanced;
 		PFNGLDELETEFRAMEBUFFERSPROC glDeleteFramebuffers;
 		PFNGLDELETERENDERBUFFERSPROC glDeleteRenderbuffers;
+		PFNGLDRAWELEMENTSINSTANCEDPROC glDrawElementsInstanced;
 
 		// Konstruktor
 		NetGL::OpenGL::OpenGL(void);
@@ -507,6 +508,7 @@ namespace NetGL {
 		void DrawElements(int Mode, int Count, int ElementType, array<UINT32>^ Array);
 		void DrawElements(int Mode, int Count, int ElementType, List<int>^ List);
 		void DrawElements(int Mode, int Count, int ElementType);
+		void DrawElementsInstanced(int Mode, int Count, int ElementType, IntPtr Indices, int InstanceCount);
 		void DrawArrays(int mode, int first, int count);
 		void DrawArraysInstanced(int mode, int first, int count, int instancecount);
 

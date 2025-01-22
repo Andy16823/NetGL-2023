@@ -1,21 +1,41 @@
 ﻿  NetGL.cpp
-C:\Users\Andy\Documents\NetGL - Kopie\NetGL\NetGL.cpp(1,1): warning C4005: "__CLR_VER": Makro-Neudefinition
-C:\Users\Andy\Documents\NetGL - Kopie\NetGL\NetGL.cpp(1,10): warning C4651: "/D__CLR_VER=40809277" für vorkompilierte Headerdatei, aber nicht für aktuelle Kompilierung angegeben
-C:\Users\Andy\Documents\NetGL - Kopie\NetGL\glcorearb.h(63,10): warning C4067: Unerwartete Token nach Präprozessordirektive - Zeilenvorschub erwartet.
-C:\Users\Andy\Documents\NetGL - Kopie\NetGL\NetGL.cpp(45,16): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust
-C:\Users\Andy\Documents\NetGL - Kopie\NetGL\NetGL.cpp(666,33): warning C4267: "return": Konvertierung von "size_t" nach "int", Datenverlust möglich
-C:\Users\Andy\Documents\NetGL - Kopie\NetGL\NetGL.cpp(1255,64): warning C4312: "Typumwandlung": Konvertierung von "int" in größeren Typ "void *"
-C:\Users\Andy\Documents\NetGL - Kopie\NetGL\NetGL.cpp(1306,53): warning C4312: "Typumwandlung": Konvertierung von "int" in größeren Typ "void *"
-C:\Users\Andy\Documents\NetGL - Kopie\NetGL\NetGL.cpp(1347,27): warning C4244: "Argument": Konvertierung von "float" in "GLsizei", möglicher Datenverlust
-C:\Users\Andy\Documents\NetGL - Kopie\NetGL\NetGL.cpp(1347,20): warning C4244: "Argument": Konvertierung von "float" in "GLsizei", möglicher Datenverlust
-C:\Users\Andy\Documents\NetGL - Kopie\NetGL\NetGL.cpp(1347,17): warning C4244: "Argument": Konvertierung von "float" in "GLint", möglicher Datenverlust
-C:\Users\Andy\Documents\NetGL - Kopie\NetGL\NetGL.cpp(1347,14): warning C4244: "Argument": Konvertierung von "float" in "GLint", möglicher Datenverlust
+C:\Users\andy1\Documents\GitHub\NetGL-2023\NetGL\NetGL\glcorearb.h(63,10): warning C4067: Unerwartete Token nach Präprozessordirektive - Zeilenvorschub erwartet.
+  (Quelldatei „/NetGL.cpp“ wird kompiliert)
+  
+C:\Users\andy1\Documents\GitHub\NetGL-2023\NetGL\NetGL\NetGL.cpp(45,16): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust
+  (Quelldatei „/NetGL.cpp“ wird kompiliert)
+  
+C:\Users\andy1\Documents\GitHub\NetGL-2023\NetGL\NetGL\NetGL.cpp(671,33): warning C4267: "return": Konvertierung von "size_t" nach "int", Datenverlust möglich
+  (Quelldatei „/NetGL.cpp“ wird kompiliert)
+  
+C:\Users\andy1\Documents\GitHub\NetGL-2023\NetGL\NetGL\NetGL.cpp(1268,64): warning C4312: "Typumwandlung": Konvertierung von "int" in größeren Typ "void *"
+  (Quelldatei „/NetGL.cpp“ wird kompiliert)
+  
+C:\Users\andy1\Documents\GitHub\NetGL-2023\NetGL\NetGL\NetGL.cpp(1319,53): warning C4312: "Typumwandlung": Konvertierung von "int" in größeren Typ "void *"
+  (Quelldatei „/NetGL.cpp“ wird kompiliert)
+  
+C:\Users\andy1\Documents\GitHub\NetGL-2023\NetGL\NetGL\NetGL.cpp(1360,27): warning C4244: "Argument": Konvertierung von "float" in "GLsizei", möglicher Datenverlust
+  (Quelldatei „/NetGL.cpp“ wird kompiliert)
+  
+C:\Users\andy1\Documents\GitHub\NetGL-2023\NetGL\NetGL\NetGL.cpp(1360,20): warning C4244: "Argument": Konvertierung von "float" in "GLsizei", möglicher Datenverlust
+  (Quelldatei „/NetGL.cpp“ wird kompiliert)
+  
+C:\Users\andy1\Documents\GitHub\NetGL-2023\NetGL\NetGL\NetGL.cpp(1360,17): warning C4244: "Argument": Konvertierung von "float" in "GLint", möglicher Datenverlust
+  (Quelldatei „/NetGL.cpp“ wird kompiliert)
+  
+C:\Users\andy1\Documents\GitHub\NetGL-2023\NetGL\NetGL\NetGL.cpp(1360,14): warning C4244: "Argument": Konvertierung von "float" in "GLint", möglicher Datenverlust
+  (Quelldatei „/NetGL.cpp“ wird kompiliert)
+  
   TextureImporter.cpp
-C:\Users\Andy\Documents\NetGL - Kopie\NetGL\TextureImporter.cpp(1,1): warning C4005: "__CLR_VER": Makro-Neudefinition
-C:\Users\Andy\Documents\NetGL - Kopie\NetGL\TextureImporter.cpp(1,10): warning C4651: "/D__CLR_VER=40809277" für vorkompilierte Headerdatei, aber nicht für aktuelle Kompilierung angegeben
-C:\Users\Andy\Documents\NetGL - Kopie\NetGL\glcorearb.h(63,10): warning C4067: Unerwartete Token nach Präprozessordirektive - Zeilenvorschub erwartet.
-C:\Users\Andy\Documents\NetGL - Kopie\NetGL\TextureImporter.cpp(20,40): warning C4305: "Argument": Verkürzung von "double" in "float"
-C:\Users\Andy\Documents\NetGL - Kopie\NetGL\TextureImporter.cpp(38,40): warning C4305: "Argument": Verkürzung von "double" in "float"
+C:\Users\andy1\Documents\GitHub\NetGL-2023\NetGL\NetGL\glcorearb.h(63,10): warning C4067: Unerwartete Token nach Präprozessordirektive - Zeilenvorschub erwartet.
+  (Quelldatei „/TextureImporter.cpp“ wird kompiliert)
+  
+C:\Users\andy1\Documents\GitHub\NetGL-2023\NetGL\NetGL\TextureImporter.cpp(20,40): warning C4305: "Argument": Verkürzung von "double" in "float"
+  (Quelldatei „/TextureImporter.cpp“ wird kompiliert)
+  
+C:\Users\andy1\Documents\GitHub\NetGL-2023\NetGL\NetGL\TextureImporter.cpp(38,40): warning C4305: "Argument": Verkürzung von "double" in "float"
+  (Quelldatei „/TextureImporter.cpp“ wird kompiliert)
+  
   Code wird generiert...
   AssemblyInfo.obj : MSIL-Modulgefunden; inkrementelles Verknüpfen wird für MSIL deaktiviert; vollständiger Link wird durchgeführt
-  NetGL.vcxproj -> C:\Users\Andy\Documents\NetGL - Kopie\x64\Release\NetGL.dll
+  NetGL.vcxproj -> C:\Users\andy1\Documents\GitHub\NetGL-2023\NetGL\x64\Release\NetGL.dll
